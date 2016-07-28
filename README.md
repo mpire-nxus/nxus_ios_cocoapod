@@ -19,6 +19,8 @@ it, simply add the following line to your Podfile:
 pod "NxusDSP"
 ```
 
+Also, add SafariService.framework to your project to support the attribution flow using cookies for iOS 9+.
+
 ## Author
 
 TechMpire ltd.
