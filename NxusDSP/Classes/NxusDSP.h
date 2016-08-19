@@ -13,6 +13,7 @@
  */
 @interface NxusDSP : NSObject
 
++ (void) debuggingEnabled:(BOOL)enabled;
 +(void)initializeLibrary:(NSString *)dspApiKey;
 -(id)initWithApiKey:(NSString *)apiKey;
 +(void)trackEvent:(NSString *)event;

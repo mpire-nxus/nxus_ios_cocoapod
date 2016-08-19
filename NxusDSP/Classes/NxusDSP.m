@@ -20,6 +20,14 @@
 
 static NxusDSP *nxusDspInstance = nil;
 
++ (void) debuggingEnabled:(BOOL)enabled {
+    if (enabled) {
+        [NDLogger setLogLevel:NDLogLevelDebug];
+    } else {
+        [NDLogger setLogLevel:NDLogLevelOff];
+    }
+}
+
 + (void) initializeLibrary:(NSString *)dspApiKey {
     static dispatch_once_t onceTokenNxusDSP;
     dispatch_once(&onceTokenNxusDSP, ^ {

@@ -13,6 +13,7 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
+    [NxusDSP debuggingEnabled:YES];
     [NxusDSP initializeLibrary:@"API_KEY"];
     return YES;
 }
