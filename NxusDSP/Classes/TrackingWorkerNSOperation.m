@@ -114,7 +114,9 @@
 - (NSString *) getS3UrlForTrackingItem: (TrackingItem *)item {
     // get device information
     NSMutableDictionary* deviceInformations = [[NDDeviceInformation getDeviceInformation] mutableCopy];
-    NSString *response = [NSString stringWithFormat:@"%@", [self sha1: [deviceInformations objectForKey:ND_DI_APP_PACKAGE_NAME]]];
+    NSString *s3endpoint = [NSString stringWithFormat:@"apple.%@", [deviceInformations objectForKey:ND_DI_APP_PACKAGE_NAME]];
+    NSString *response = [NSString stringWithFormat:@"%@", [self sha1: s3endpoint]];
+
     NSString *delimiter = @"?";
     
     for (id key in deviceInformations) {
