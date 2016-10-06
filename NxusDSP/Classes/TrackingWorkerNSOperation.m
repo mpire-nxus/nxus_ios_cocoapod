@@ -131,6 +131,13 @@
         delimiter = @"&";
     };
     
+    NSString *eventName = [NSString stringWithFormat:@"%@%@=%@", delimiter, ND_TRACK_EVENT_NAME, [item event]];
+    response = [response stringByAppendingString: eventName];
+    NSString *eventParam = [NSString stringWithFormat:@"%@%@=%@", delimiter, ND_TRACK_EVENT_PARAM, [item getParams]];
+    response = [response stringByAppendingString: eventParam];
+    NSString *eventTime = [NSString stringWithFormat:@"%@%@=%@", delimiter, ND_TRACK_EVENT_TIME, [item getFormattedTime]];
+    response = [response stringByAppendingString: eventTime];
+    
     return response;
 }
 
