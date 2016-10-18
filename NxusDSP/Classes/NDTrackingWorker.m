@@ -33,42 +33,6 @@ static NDTrackingWorker *ndTrackingWorkerInstance = nil;
     [NDDataContainer storeDoubleValue:ND_CONF_LAST_LAUNCH_INTERNAL value:current];
     
     if (lastLaunch == 0) {
-        if (SYSTEM_VERSION_GREATER_THAN(@"9.0")) {
-            [NDLogger debug:@"iOS 9+ detected..starting SFSafariViewController"];
-            
-            NSString *advertisingIdentifier = [NDDeviceInformation getAdvertisingIdentifier];
-//            TODO set endpoint URL for tracking attribution from iOS app and send advertisingIdentifier
-            NSString *urlString = @"http://mockbin.org/bin/7277e60c-7cad-443d-a40e-75e66b36e08c";
-            NSURL *strongMatchUrl = [NSURL URLWithString:[urlString stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
-            
-            SFSafariViewController *safController = [[SFSafariViewController alloc] initWithURL:strongMatchUrl];
-            ndTrackingWorkerInstance.secondWindow = [[UIWindow alloc] initWithFrame:[[[[UIApplication sharedApplication] windows] firstObject] bounds]];
-            UIViewController *windowRootController = [[UIViewController alloc] init];
-            ndTrackingWorkerInstance.secondWindow.rootViewController = windowRootController;
-            ndTrackingWorkerInstance.secondWindow.windowLevel = UIWindowLevelNormal - 1;
-            [ndTrackingWorkerInstance.secondWindow setHidden:NO];
-            [ndTrackingWorkerInstance.secondWindow setAlpha:0];
-            
-            dispatch_async(dispatch_get_main_queue(), ^{
-                [windowRootController addChildViewController:safController];
-                [windowRootController.view addSubview:safController.view];
-                [safController didMoveToParentViewController:windowRootController];
-                
-                [NDLogger debug:@"SFSafariViewController opening..."];
-                
-                dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(10 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-                    [safController willMoveToParentViewController:nil];
-                    [safController.view removeFromSuperview];
-                    [safController removeFromParentViewController];
-                    
-                    [NDLogger debug:@"SFSafariViewController closing..."];
-                    
-                    [ndTrackingWorkerInstance.secondWindow removeFromSuperview];
-                    ndTrackingWorkerInstance.secondWindow = nil;
-                });
-            });
-        }
-        
         [NDTrackingWorker track:ND_TRACKING_EVENT_FIRST_APP_LAUNCH params:nil];
     } else {
         [NDTrackingWorker track:ND_TRACKING_EVENT_APP_LAUNCH params:nil];
