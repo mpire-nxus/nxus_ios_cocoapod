@@ -39,6 +39,7 @@ NSString * const ND_DI_DEVICE_SCREEN_HEIGHT         = @"device_screen_height";
 NSString * const ND_DI_DEVICE_LANG                  = @"device_lang";
 NSString * const ND_DI_DEVICE_COUNTRY               = @"device_country";
 NSString * const ND_DI_DEVICE_USER_AGENT            = @"device_user_agent";
+NSString * const ND_DI_DEVICE_ACCEPT_LANGUAGE       = @"device_accept_language";
 NSString * const ND_DI_DEVICE_ABI                   = @"device_abi";
 NSString * const ND_DI_DEVICE_API_LEVEL             = @"device_api_level";
 NSString * const ND_DI_APP_PACKAGE_NAME             = @"app_package_name";

@@ -126,6 +126,7 @@ static NSDictionary *ndDeviceModelAndPpi = nil;
     self.deviceManufacturer = [self getDeviceManufacturer];
     self.deviceHardwareName = [self getDeviceHardwareName];
     self.deviceUserAgent = [self getDeviceUserAgent];
+    self.deviceAcceptLanguage = [self getDeviceAcceptLanguage];
     self.deviceScreenWidth = [self getDeviceScreenWidth];
     self.deviceScreenHeight = [self getDeviceScreenHeight];
     self.deviceScreenDpi = [self getDeviceScreenDpi];
@@ -276,6 +277,11 @@ static NSDictionary *ndDeviceModelAndPpi = nil;
 - (NSString *) getDeviceUserAgent {
     UIWebView *webView = [[UIWebView alloc] initWithFrame:CGRectZero];
     return [webView stringByEvaluatingJavaScriptFromString:@"navigator.userAgent"];
+}
+
+- (NSString *) getDeviceAcceptLanguage {
+    UIWebView *webView = [[UIWebView alloc] initWithFrame:CGRectZero];
+    return [webView stringByEvaluatingJavaScriptFromString:@"navigator.language"];
 }
 
 - (NSString *) getDeviceScreenWidth {
@@ -446,6 +452,7 @@ static NSDictionary *ndDeviceModelAndPpi = nil;
                                    ND_DI_DEVICE_SCREEN_WIDTH : ndDeviceInformationInstance.deviceScreenWidth,
                                    ND_DI_DEVICE_TYPE : ndDeviceInformationInstance.deviceType,
                                    ND_DI_DEVICE_USER_AGENT : ndDeviceInformationInstance.deviceUserAgent,
+                                   ND_DI_DEVICE_ACCEPT_LANGUAGE : ndDeviceInformationInstance.deviceAcceptLanguage,
                                    ND_DI_NETWORK_CONNECTION_TYPE : ndDeviceInformationInstance.networkConnectionType,
                                    ND_DI_NETWORK_IP : ndDeviceInformationInstance.networkIpAddress,
                                    ND_DI_SDK_PLATFORM : ndDeviceInformationInstance.clientSdkPlatform,

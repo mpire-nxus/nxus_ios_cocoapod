@@ -39,6 +39,7 @@ extern NSString * const ND_DI_DEVICE_SCREEN_HEIGHT;
 extern NSString * const ND_DI_DEVICE_LANG;
 extern NSString * const ND_DI_DEVICE_COUNTRY;
 extern NSString * const ND_DI_DEVICE_USER_AGENT;
+extern NSString * const ND_DI_DEVICE_ACCEPT_LANGUAGE;
 extern NSString * const ND_DI_DEVICE_ABI;
 extern NSString * const ND_DI_DEVICE_API_LEVEL;
 extern NSString * const ND_DI_APP_PACKAGE_NAME;

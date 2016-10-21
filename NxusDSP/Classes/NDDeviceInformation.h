@@ -38,6 +38,7 @@
 @property (nonatomic, copy) NSString *deviceManufacturer;
 @property (nonatomic, copy) NSString *deviceHardwareName;
 @property (nonatomic, copy) NSString *deviceUserAgent;
+@property (nonatomic, copy) NSString *deviceAcceptLanguage;
 @property (nonatomic, copy) NSString *deviceScreenWidth;
 @property (nonatomic, copy) NSString *deviceScreenHeight;
 @property (nonatomic, copy) NSString *deviceScreenDpi;
@@ -61,6 +62,7 @@
 - (NSString *) getDeviceManufacturer;
 - (NSString *) getDeviceHardwareName;
 - (NSString *) getDeviceUserAgent;
+- (NSString *) getDeviceAcceptLanguage;
 - (NSString *) getDeviceScreenWidth;
 - (NSString *) getDeviceScreenHeight;
 - (NSString *) getDeviceScreenDpi;
