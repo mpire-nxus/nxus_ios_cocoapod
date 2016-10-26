@@ -1,5 +1,5 @@
 #
-# Be sure to run `pod lib lint NxusDSP.podspec' to ensure this is a
+# Be sure to run `pod lib lint nxus_ios_cocoapod.podspec' to ensure this is a
 # valid spec before submitting.
 #
 # Any lines starting with a # are optional, but their use is encouraged
@@ -7,7 +7,7 @@
 #
 
 Pod::Spec.new do |s|
-  s.name             = 'NxusDSP'
+  s.name             = 'nxus_ios_cocoapod'
   s.version          = '1.0.4'
   s.summary          = 'Library for generating attribution events, while also enabling users to track events.'
 
@@ -21,10 +21,10 @@ Pod::Spec.new do |s|
 Automatically track attributions and log custom events. Support event parameteres.
                        DESC
 
-  s.homepage         = 'https://github.com/mpire-nxus/NxusDSP'
+  s.homepage         = 'https://github.com/mpire-nxus/nxus_ios_cocoapod'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'TechMpire ltd.' => 'sdkdevelopment@mpiremedia.com.au' }
-  s.source           = { :git => 'https://github.com/mpire-nxus/NxusDSP.git', :tag => s.version.to_s }
+  s.source           = { :git => 'https://github.com/mpire-nxus/nxus_ios_cocoapod.git', :tag => s.version.to_s }
 
   s.ios.deployment_target = '9.0'
 

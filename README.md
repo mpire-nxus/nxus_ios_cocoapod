@@ -1,8 +1,8 @@
 # NxusDSP
 
-[![Version](https://img.shields.io/cocoapods/v/NxusDSP.svg?style=flat)](http://cocoapods.org/pods/NxusDSP)
-[![License](https://img.shields.io/cocoapods/l/NxusDSP.svg?style=flat)](http://cocoapods.org/pods/NxusDSP)
-[![Platform](https://img.shields.io/cocoapods/p/NxusDSP.svg?style=flat)](http://cocoapods.org/pods/NxusDSP)
+[![Version](https://img.shields.io/cocoapods/v/nxus_ios_cocoapod.svg?style=flat)](http://cocoapods.org/pods/nxus_ios_cocoapod)
+[![License](https://img.shields.io/cocoapods/l/nxus_ios_cocoapod.svg?style=flat)](http://cocoapods.org/pods/nxus_ios_cocoapod)
+[![Platform](https://img.shields.io/cocoapods/p/nxus_ios_cocoapod.svg?style=flat)](http://cocoapods.org/pods/nxus_ios_cocoapod)
 
 ## Example
 
@@ -12,14 +12,12 @@ To run the example project, clone the repo, and run `pod install` from the Examp
 
 ## Installation
 
-NxusDSP is available through [CocoaPods](http://cocoapods.org). To install
+nxus_ios_cocoapod is available through [CocoaPods](http://cocoapods.org). To install
 it, simply add the following line to your Podfile:
 
 ```ruby
-pod "NxusDSP"
+pod "nxus_ios_cocoapod"
 ```
-
-Also, add SafariService.framework to your project to support the attribution flow using cookies for iOS 9+.
 
 ## Author
 
@@ -27,4 +25,4 @@ TechMpire ltd.
 
 ## License
 
-NxusDSP is available under the MIT license. See the LICENSE file for more info.
+nxus_ios_cocoapod is available under the MIT license. See the LICENSE file for more info.

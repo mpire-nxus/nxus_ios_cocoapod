@@ -49,27 +49,27 @@
 		33D0AAFA1B786024A1DD69AA /* Pods-NxusDSP_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NxusDSP_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-NxusDSP_Example/Pods-NxusDSP_Example.release.xcconfig"; sourceTree = "<group>"; };
 		36631430018AF76891AF19DB /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		40B6B64C0F71C57D55B26D58 /* Pods-NxusDSP_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NxusDSP_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NxusDSP_Example/Pods-NxusDSP_Example.debug.xcconfig"; sourceTree = "<group>"; };
-		6003F58A195388D20070C39A /* NxusDSP_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NxusDSP_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		6003F58A195388D20070C39A /* nxus_ios_cocoapod_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = nxus_ios_cocoapod_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6003F58D195388D20070C39A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		6003F58F195388D20070C39A /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		6003F591195388D20070C39A /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
-		6003F595195388D20070C39A /* NxusDSP-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "NxusDSP-Info.plist"; sourceTree = "<group>"; };
+		6003F595195388D20070C39A /* nxus_ios_cocoapod-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "nxus_ios_cocoapod-Info.plist"; sourceTree = "<group>"; };
 		6003F597195388D20070C39A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		6003F599195388D20070C39A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		6003F59B195388D20070C39A /* NxusDSP-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NxusDSP-Prefix.pch"; sourceTree = "<group>"; };
+		6003F59B195388D20070C39A /* nxus_ios_cocoapod-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "nxus_ios_cocoapod-Prefix.pch"; sourceTree = "<group>"; };
 		6003F59C195388D20070C39A /* NDSPAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NDSPAppDelegate.h; sourceTree = "<group>"; };
 		6003F59D195388D20070C39A /* NDSPAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NDSPAppDelegate.m; sourceTree = "<group>"; };
 		6003F5A5195388D20070C39A /* NDSPViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NDSPViewController.h; sourceTree = "<group>"; };
 		6003F5A6195388D20070C39A /* NDSPViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NDSPViewController.m; sourceTree = "<group>"; };
 		6003F5A8195388D20070C39A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		6003F5AE195388D20070C39A /* NxusDSP_Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NxusDSP_Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		6003F5AE195388D20070C39A /* nxus_ios_cocoapod_Example.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = nxus_ios_cocoapod_Example.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6003F5AF195388D20070C39A /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		6003F5B7195388D20070C39A /* Tests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Tests-Info.plist"; sourceTree = "<group>"; };
 		6003F5B9195388D20070C39A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		6003F5BB195388D20070C39A /* Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Tests.m; sourceTree = "<group>"; };
 		606FC2411953D9B200FFA9A0 /* Tests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Tests-Prefix.pch"; sourceTree = "<group>"; };
 		898D9ED72A40071453B6DC64 /* Pods_NxusDSP_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NxusDSP_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		D160CAAA9458AD891582F466 /* NxusDSP.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = NxusDSP.podspec; path = ../NxusDSP.podspec; sourceTree = "<group>"; };
+		D160CAAA9458AD891582F466 /* nxus_ios_cocoapod.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = nxus_ios_cocoapod.podspec; path = ../nxus_ios_cocoapod.podspec; sourceTree = "<group>"; };
 		D9820700E6FA0198129CDF85 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		F75ABC117F0CCB59A802C515 /* Pods_NxusDSP_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NxusDSP_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -126,8 +126,8 @@
 		6003F58B195388D20070C39A /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				6003F58A195388D20070C39A /* NxusDSP_Example.app */,
-				6003F5AE195388D20070C39A /* NxusDSP_Tests.xctest */,
+				6003F58A195388D20070C39A /* nxus_ios_cocoapod_Example.app */,
+				6003F5AE195388D20070C39A /* nxus_ios_cocoapod_Example.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -168,10 +168,10 @@
 		6003F594195388D20070C39A /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				6003F595195388D20070C39A /* NxusDSP-Info.plist */,
+				6003F595195388D20070C39A /* nxus_ios_cocoapod-Info.plist */,
 				6003F596195388D20070C39A /* InfoPlist.strings */,
 				6003F599195388D20070C39A /* main.m */,
-				6003F59B195388D20070C39A /* NxusDSP-Prefix.pch */,
+				6003F59B195388D20070C39A /* nxus_ios_cocoapod-Prefix.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -198,7 +198,7 @@
 		60FF7A9C1954A5C5007DD14C /* Podspec Metadata */ = {
 			isa = PBXGroup;
 			children = (
-				D160CAAA9458AD891582F466 /* NxusDSP.podspec */,
+				D160CAAA9458AD891582F466 /* nxus_ios_cocoapod.podspec */,
 				D9820700E6FA0198129CDF85 /* README.md */,
 				36631430018AF76891AF19DB /* LICENSE */,
 			);
@@ -208,9 +208,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		6003F589195388D20070C39A /* NxusDSP_Example */ = {
+		6003F589195388D20070C39A /* nxus_ios_cocoapod_Example */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 6003F5BF195388D20070C39A /* Build configuration list for PBXNativeTarget "NxusDSP_Example" */;
+			buildConfigurationList = 6003F5BF195388D20070C39A /* Build configuration list for PBXNativeTarget "nxus_ios_cocoapod_Example" */;
 			buildPhases = (
 				C640931881262ADA9122033F /* [CP] Check Pods Manifest.lock */,
 				6003F586195388D20070C39A /* Sources */,
@@ -223,14 +223,14 @@
 			);
 			dependencies = (
 			);
-			name = NxusDSP_Example;
+			name = nxus_ios_cocoapod_Example;
 			productName = NxusDSP;
-			productReference = 6003F58A195388D20070C39A /* NxusDSP_Example.app */;
+			productReference = 6003F58A195388D20070C39A /* nxus_ios_cocoapod_Example.app */;
 			productType = "com.apple.product-type.application";
 		};
-		6003F5AD195388D20070C39A /* NxusDSP_Tests */ = {
+		6003F5AD195388D20070C39A /* nxus_ios_cocoapod_Tests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 6003F5C2195388D20070C39A /* Build configuration list for PBXNativeTarget "NxusDSP_Tests" */;
+			buildConfigurationList = 6003F5C2195388D20070C39A /* Build configuration list for PBXNativeTarget "nxus_ios_cocoapod_Tests" */;
 			buildPhases = (
 				A1F72183A57D31D6E24C56EB /* [CP] Check Pods Manifest.lock */,
 				6003F5AA195388D20070C39A /* Sources */,
@@ -244,9 +244,9 @@
 			dependencies = (
 				6003F5B4195388D20070C39A /* PBXTargetDependency */,
 			);
-			name = NxusDSP_Tests;
+			name = nxus_ios_cocoapod_Tests;
 			productName = NxusDSPTests;
-			productReference = 6003F5AE195388D20070C39A /* NxusDSP_Tests.xctest */;
+			productReference = 6003F5AE195388D20070C39A /* nxus_ios_cocoapod_Example.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -267,7 +267,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 6003F585195388D10070C39A /* Build configuration list for PBXProject "NxusDSP" */;
+			buildConfigurationList = 6003F585195388D10070C39A /* Build configuration list for PBXProject "nxus_ios_cocoapod" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -280,8 +280,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				6003F589195388D20070C39A /* NxusDSP_Example */,
-				6003F5AD195388D20070C39A /* NxusDSP_Tests */,
+				6003F589195388D20070C39A /* nxus_ios_cocoapod_Example */,
+				6003F5AD195388D20070C39A /* nxus_ios_cocoapod_Tests */,
 			);
 		};
 /* End PBXProject section */
@@ -426,7 +426,7 @@
 /* Begin PBXTargetDependency section */
 		6003F5B4195388D20070C39A /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 6003F589195388D20070C39A /* NxusDSP_Example */;
+			target = 6003F589195388D20070C39A /* nxus_ios_cocoapod_Example */;
 			targetProxy = 6003F5B3195388D20070C39A /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -533,11 +533,11 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "NxusDSP/NxusDSP-Prefix.pch";
-				INFOPLIST_FILE = "NxusDSP/NxusDSP-Info.plist";
+				GCC_PREFIX_HEADER = "NxusDSP/nxus_ios_cocoapod-Prefix.pch";
+				INFOPLIST_FILE = "NxusDSP/nxus_ios_cocoapod-Info.plist";
 				MODULE_NAME = ExampleApp;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = nxus_ios_cocoapod_Example;
 				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
@@ -552,11 +552,11 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "NxusDSP/NxusDSP-Prefix.pch";
-				INFOPLIST_FILE = "NxusDSP/NxusDSP-Info.plist";
+				GCC_PREFIX_HEADER = "NxusDSP/nxus_ios_cocoapod-Prefix.pch";
+				INFOPLIST_FILE = "NxusDSP/nxus_ios_cocoapod-Info.plist";
 				MODULE_NAME = ExampleApp;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = nxus_ios_cocoapod_Example;
 				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
@@ -580,8 +580,8 @@
 				);
 				INFOPLIST_FILE = "Tests/Tests-Info.plist";
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/NxusDSP_Example.app/NxusDSP_Example";
+				PRODUCT_NAME = nxus_ios_cocoapod_Example;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/nxus_ios_cocoapod_Example.app/nxus_ios_cocoapod_Example";
 				WRAPPER_EXTENSION = xctest;
 			};
 			name = Debug;
@@ -600,8 +600,8 @@
 				GCC_PREFIX_HEADER = "Tests/Tests-Prefix.pch";
 				INFOPLIST_FILE = "Tests/Tests-Info.plist";
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/NxusDSP_Example.app/NxusDSP_Example";
+				PRODUCT_NAME = nxus_ios_cocoapod_Example;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/nxus_ios_cocoapod_Example.app/nxus_ios_cocoapod_Example";
 				WRAPPER_EXTENSION = xctest;
 			};
 			name = Release;
@@ -609,7 +609,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		6003F585195388D10070C39A /* Build configuration list for PBXProject "NxusDSP" */ = {
+		6003F585195388D10070C39A /* Build configuration list for PBXProject "nxus_ios_cocoapod" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				6003F5BD195388D20070C39A /* Debug */,
@@ -618,7 +618,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		6003F5BF195388D20070C39A /* Build configuration list for PBXNativeTarget "NxusDSP_Example" */ = {
+		6003F5BF195388D20070C39A /* Build configuration list for PBXNativeTarget "nxus_ios_cocoapod_Example" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				6003F5C0195388D20070C39A /* Debug */,
@@ -627,7 +627,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		6003F5C2195388D20070C39A /* Build configuration list for PBXNativeTarget "NxusDSP_Tests" */ = {
+		6003F5C2195388D20070C39A /* Build configuration list for PBXNativeTarget "nxus_ios_cocoapod_Tests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				6003F5C3195388D20070C39A /* Debug */,

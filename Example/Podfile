@@ -1,9 +1,9 @@
 use_frameworks!
 
-target 'NxusDSP_Example' do
-  pod 'NxusDSP', :path => '../'
+target 'nxus_ios_cocoapod_Example' do
+  pod 'nxus_ios_cocoapod', :path => '../'
 
-  target 'NxusDSP_Tests' do
+  target 'nxus_ios_cocoapod_Tests' do
     inherit! :search_paths
 
     

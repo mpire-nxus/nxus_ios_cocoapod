@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "6003F589195388D20070C39A"
-               BuildableName = "NxusDSP_Example.app"
-               BlueprintName = "NxusDSP_Example"
-               ReferencedContainer = "container:NxusDSP.xcodeproj">
+               BuildableName = "nxus_ios_cocoapod_Example.app"
+               BlueprintName = "nxus_ios_cocoapod_Example"
+               ReferencedContainer = "container:nxus_ios_cocoapod.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "6003F5AD195388D20070C39A"
-               BuildableName = "NxusDSP_Tests.xctest"
-               BlueprintName = "NxusDSP_Tests"
-               ReferencedContainer = "container:NxusDSP.xcodeproj">
+               BuildableName = "nxus_ios_cocoapod_Example.xctest"
+               BlueprintName = "nxus_ios_cocoapod_Tests"
+               ReferencedContainer = "container:nxus_ios_cocoapod.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -43,9 +43,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "6003F589195388D20070C39A"
-            BuildableName = "NxusDSP_Example.app"
-            BlueprintName = "NxusDSP_Example"
-            ReferencedContainer = "container:NxusDSP.xcodeproj">
+            BuildableName = "nxus_ios_cocoapod_Example.app"
+            BlueprintName = "nxus_ios_cocoapod_Example"
+            ReferencedContainer = "container:nxus_ios_cocoapod.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -66,9 +66,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "6003F589195388D20070C39A"
-            BuildableName = "NxusDSP_Example.app"
-            BlueprintName = "NxusDSP_Example"
-            ReferencedContainer = "container:NxusDSP.xcodeproj">
+            BuildableName = "nxus_ios_cocoapod_Example.app"
+            BlueprintName = "nxus_ios_cocoapod_Example"
+            ReferencedContainer = "container:nxus_ios_cocoapod.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -85,9 +85,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "6003F589195388D20070C39A"
-            BuildableName = "NxusDSP_Example.app"
-            BlueprintName = "NxusDSP_Example"
-            ReferencedContainer = "container:NxusDSP.xcodeproj">
+            BuildableName = "nxus_ios_cocoapod_Example.app"
+            BlueprintName = "nxus_ios_cocoapod_Example"
+            ReferencedContainer = "container:nxus_ios_cocoapod.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
