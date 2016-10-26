@@ -1,4 +1,4 @@
-# NxusDSP
+# nxus_ios_cocoapod
 
 [![Version](https://img.shields.io/cocoapods/v/nxus_ios_cocoapod.svg?style=flat)](http://cocoapods.org/pods/nxus_ios_cocoapod)
 [![License](https://img.shields.io/cocoapods/l/nxus_ios_cocoapod.svg?style=flat)](http://cocoapods.org/pods/nxus_ios_cocoapod)
