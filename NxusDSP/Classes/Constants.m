@@ -10,7 +10,7 @@
 @implementation Constants
 
 NSString * const ND_SERVER_BASE_URL_EVENT           = @"https://sdk.mpire.eventnx.us/";
-NSString * const ND_SERVER_BASE_URL_ATTRIBUTION     = @"https://sdk-attribution.test.nxus.mobi";
+NSString * const ND_SERVER_BASE_URL_ATTRIBUTION     = @"https://sdk-attribution.mpire.nxus.mobi/";
 
 NSString * const ND_APP_FIRST_RUN                   = @"app-first-run";
 NSString * const ND_FINGERPRINT                     = @"fingerprint";
@@ -71,7 +71,7 @@ NSString * const ND_TRACKING_EVENT_KEY_PREFIX       = @"ND_TRACKING_ITEM_";
 
 NSString * const ND_ADVERTISING_IDENTIFIER          = @"nd.advertising.identifier";
 
-NSString * const ND_SDK_VERSION                     = @"1.0.5";
+NSString * const ND_SDK_VERSION                     = @"1.0.6";
 NSString * const ND_SDK_PLATFORM                    = @"ios_native";
 
 int const ND_TRACKING_OPERATION_SLEEP = 1800;
