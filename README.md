@@ -4,11 +4,8 @@
 [![License](https://img.shields.io/cocoapods/l/nxus_ios_cocoapod.svg?style=flat)](http://cocoapods.org/pods/nxus_ios_cocoapod)
 [![Platform](https://img.shields.io/cocoapods/p/nxus_ios_cocoapod.svg?style=flat)](http://cocoapods.org/pods/nxus_ios_cocoapod)
 
-## Example
-
-To run the example project, clone the repo, and run `pod install` from the Example directory first.
-
-## Requirements
+## Summary
+TechMpire nxus platform SDK CocoaPods distribution for iOS developers
 
 ## Installation
 
@@ -17,6 +14,37 @@ it, simply add the following line to your Podfile:
 
 ```ruby
 pod "nxus_ios_cocoapod"
+```
+
+## SDK initialisation
+After you completed the previous step, you are ready to initialise the library and start sending events.
+Open <b>AppDelegate.m</b> class and import the library header file:
+```
+#import "include/NxusDSP/NxusDSP.h"
+```
+
+Then, initialise it within AppDelegate's <b>didFinishLaunchingWithOptions</b> method:
+```
+[NxusDSP initializeLibrary:@"YOUR_API_KEY"];
+```
+
+## Sending custom events
+You can send custom events by calling the method <b>trackEvent</b>:
+```
+[NxusDSP trackEvent:@"event-name"];
+```
+
+If you have any additional parameters you would like to send, pass in an instance of <b>NSMutableDictionary</b>:
+```
+NSMutableDictionary *params = [[NSMutableDictionary alloc] init];
+[params setValue:@"value" forKey:@"key"];
+[NxusDSP trackEvent:event params:params];
+```
+
+## Logging
+To enable logging, call the method debuggingEnabled before library initialisation:
+```
+[NxusDSP debuggingEnabled:YES];
 ```
 
 ## Author
