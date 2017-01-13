@@ -28,54 +28,84 @@
         
         if ([[trackingItem event] isEqualToString:ND_TRACKING_EVENT_FIRST_APP_LAUNCH]) {
             serverStringURL = ND_SERVER_BASE_URL_ATTRIBUTION;
-        } else {
-            serverStringURL = [NSString stringWithFormat:@"%@%@", serverStringURL, [self getS3UrlForTrackingItem: trackingItem]]; // update for S3 storage
             
-        }
-  
-        NSURL *serverURL = [NSURL URLWithString:serverStringURL];
-        NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:serverURL
-                                                               cachePolicy:NSURLRequestReloadIgnoringCacheData timeoutInterval:30.0];
-        NSData *requestData = [postObject dataUsingEncoding:NSUTF8StringEncoding];
-        NSString *dspToken = [NDDataContainer pullStringValue:ND_DSP_API_KEY];
-
-        if ([[trackingItem event] isEqualToString:ND_TRACKING_EVENT_FIRST_APP_LAUNCH]) {
+            NSURL *serverURL = [NSURL URLWithString:serverStringURL];
+            NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:serverURL
+                                                                   cachePolicy:NSURLRequestReloadIgnoringCacheData timeoutInterval:30.0];
+            NSData *requestData = [postObject dataUsingEncoding:NSUTF8StringEncoding];
+            NSString *dspToken = [NDDataContainer pullStringValue:ND_DSP_API_KEY];
+            
             [request setHTTPMethod:@"POST"];
             [request setValue:@"application/json" forHTTPHeaderField:@"Accept"];
             [request setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
             [request setValue:dspToken forHTTPHeaderField:ND_REQ_DSP_TOKEN];
             [request setValue:[NSString stringWithFormat:@"%lu", (unsigned long)[postObject length]] forHTTPHeaderField:@"Content-Length"];
             [request setHTTPBody:requestData];
-        } else {
-            [request setHTTPMethod:@"GET"];
-            [request setValue:@"iosSDK/1.0" forHTTPHeaderField:@"User-Agent"];
-            [request setValue:@"" forHTTPHeaderField:@"Content-Type"];
-            [request setValue:dspToken forHTTPHeaderField:ND_REQ_DSP_TOKEN];
-        }
-        
-        dispatch_semaphore_t semaphore = dispatch_semaphore_create(0);
-        
-        NSURLSession *session = [NSURLSession sessionWithConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration]];
-        [[session dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
-            if (error) {
-                [NDLogger debug:@"dataTaskWithRequest error: %@", error];
-            } else {
-                if ([response isKindOfClass:[NSHTTPURLResponse class]]) {
-                    NSInteger statusCode = [(NSHTTPURLResponse *)response statusCode];
-                    if (statusCode != 200) {
-                        [NDLogger debug:@"dataTaskWithRequest HTTP status code: %ld", (long)statusCode];
-                    } else {
-                        NSString *requestReply = [[NSString alloc] initWithData:data encoding:NSASCIIStringEncoding];
-                        [NDLogger debug:@"requestReply: %@", requestReply];
-                        [NDDataContainer clearTrackingEvent:trackingItem];
+            
+            dispatch_semaphore_t semaphore = dispatch_semaphore_create(0);
+            
+            NSURLSession *session = [NSURLSession sessionWithConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration]];
+            [[session dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+                if (error) {
+                    [NDLogger debug:@"dataTaskWithRequest error: %@", error];
+                } else {
+                    if ([response isKindOfClass:[NSHTTPURLResponse class]]) {
+                        NSInteger statusCode = [(NSHTTPURLResponse *)response statusCode];
+                        if (statusCode != 200) {
+                            [NDLogger debug:@"dataTaskWithRequest HTTP status code: %ld", (long)statusCode];
+                        } else {
+                            [self sendEventToS3:trackingItem];
+                            NSString *requestReply = [[NSString alloc] initWithData:data encoding:NSASCIIStringEncoding];
+                            [NDLogger debug:@"requestReply: %@", requestReply];
+                            [NDDataContainer clearTrackingEvent:trackingItem];
+                        }
                     }
                 }
-            }
-            dispatch_semaphore_signal(semaphore);
-        }] resume];
-        
-        dispatch_semaphore_wait(semaphore, DISPATCH_TIME_FOREVER);
+                dispatch_semaphore_signal(semaphore);
+            }] resume];
+            
+            dispatch_semaphore_wait(semaphore, DISPATCH_TIME_FOREVER);
+        } else {
+            [self sendEventToS3:trackingItem];
+        }
     }
+}
+
+- (void) sendEventToS3:(TrackingItem *)item {
+    NSString *serverStringURL = ND_SERVER_BASE_URL_EVENT;
+    serverStringURL = [NSString stringWithFormat:@"%@%@", serverStringURL, [self getS3UrlForTrackingItem: item]];
+    NSURL *serverURL = [NSURL URLWithString:serverStringURL];
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:serverURL cachePolicy:NSURLRequestReloadIgnoringCacheData timeoutInterval:30.0];
+    
+    NSString *dspToken = [NDDataContainer pullStringValue:ND_DSP_API_KEY];
+    
+    [request setHTTPMethod:@"GET"];
+    [request setValue:@"iosSDK/1.0" forHTTPHeaderField:@"User-Agent"];
+    [request setValue:@"" forHTTPHeaderField:@"Content-Type"];
+    [request setValue:dspToken forHTTPHeaderField:ND_REQ_DSP_TOKEN];
+    
+    dispatch_semaphore_t semaphore = dispatch_semaphore_create(0);
+    
+    NSURLSession *session = [NSURLSession sessionWithConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration]];
+    [[session dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+        if (error) {
+            [NDLogger debug:@"dataTaskWithRequest error: %@", error];
+        } else {
+            if ([response isKindOfClass:[NSHTTPURLResponse class]]) {
+                NSInteger statusCode = [(NSHTTPURLResponse *)response statusCode];
+                if (statusCode != 200) {
+                    [NDLogger debug:@"dataTaskWithRequest HTTP status code: %ld", (long)statusCode];
+                } else {
+                    NSString *requestReply = [[NSString alloc] initWithData:data encoding:NSASCIIStringEncoding];
+                    [NDLogger debug:@"requestReply: %@", requestReply];
+                    [NDDataContainer clearTrackingEvent:item];
+                }
+            }
+        }
+        dispatch_semaphore_signal(semaphore);
+    }] resume];
+    
+    dispatch_semaphore_wait(semaphore, DISPATCH_TIME_FOREVER);
 }
 
 - (NSString *) getJsonObjectForTrackingItem: (TrackingItem *)item {
