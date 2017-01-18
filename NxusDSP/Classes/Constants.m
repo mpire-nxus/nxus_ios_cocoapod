@@ -50,6 +50,9 @@ NSString * const ND_DI_APP_FIRST_LAUNCH             = @"app_first_launch";
 NSString * const ND_DI_SDK_VERSION                  = @"sdk_version";
 NSString * const ND_DI_SDK_PLATFORM                 = @"sdk_platform";
 
+NSString * const ND_DI_APP_INSTALL_TRUST_TIME       = @"app_install_trust_time";
+NSString * const ND_DI_APP_INSTALL_TRUST_KEY        = @"app_install_trust_key";
+
 NSString * const ND_TRACK_APPLICATION_STATS         = @"application_stats";
 NSString * const ND_TRACK_EVENT_NAME                = @"event_name";
 NSString * const ND_TRACK_EVENT_PARAM               = @"event_param";
@@ -71,7 +74,7 @@ NSString * const ND_TRACKING_EVENT_KEY_PREFIX       = @"ND_TRACKING_ITEM_";
 
 NSString * const ND_ADVERTISING_IDENTIFIER          = @"nd.advertising.identifier";
 
-NSString * const ND_SDK_VERSION                     = @"1.0.8";
+NSString * const ND_SDK_VERSION                     = @"1.0.9";
 NSString * const ND_SDK_PLATFORM                    = @"ios_native";
 
 int const ND_TRACKING_OPERATION_SLEEP = 1800;

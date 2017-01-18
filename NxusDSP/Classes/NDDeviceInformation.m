@@ -15,6 +15,7 @@
 #import "sys/utsname.h"
 #import "NDLogger.h"
 #import "CommonCrypto/CommonDigest.h"
+#import "SAMKeychain.h"
 
 @import UIKit;
 
@@ -24,6 +25,9 @@
 @property (nonatomic, retain) NSLocale *locale;
 @property (nonatomic, retain) NSBundle *bundle;
 @property (nonatomic, retain) NSDictionary *infoDictionary;
+
+@property (nonatomic, retain) NSString *trustInstallTime;
+@property (nonatomic, retain) NSString *trustInstallKey;
 
 @end
 
@@ -62,6 +66,10 @@ static NSDictionary *ndDeviceModelAndPpi = nil;
                             @"iPhone8,1": @[@"iPhone 6S", @"326"],
                             @"iPhone8,2": @[@"iPhone 6S Plus", @"401"],
                             @"iPhone8,4": @[@"iPhone SE", @"326"],
+                            @"iPhone9,1": @[@"iPhone 7", @"326"],
+                            @"iPhone9,3": @[@"iPhone 7", @"326"],
+                            @"iPhone9,2": @[@"iPhone 7 Plus", @"401"],
+                            @"iPhone9,4": @[@"iPhone 7 Plus", @"401"],
                             @"iPad1,1": @[@"iPad 1", @"132"],
                             @"iPad2,1": @[@"iPad 2", @"132"],
                             @"iPad2,2": @[@"iPad 2", @"132"],
@@ -137,6 +145,15 @@ static NSDictionary *ndDeviceModelAndPpi = nil;
     
     self.networkConnectionType = [self getNetworkConnectionType];
     self.networkIpAddress = [self getNetworkIpAddress];
+    
+    self.trustInstallTime = [SAMKeychain passwordForService:ND_DI_APP_INSTALL_TRUST_TIME account:self.bundleIdentifier];
+    self.trustInstallKey = [SAMKeychain passwordForService:ND_DI_APP_INSTALL_TRUST_KEY account:self.bundleIdentifier];
+    if (self.trustInstallTime == nil) {
+        self.trustInstallTime = self.applicationInstallTime;
+        self.trustInstallKey = self.applicationUserUuid;
+        [SAMKeychain setPassword:self.trustInstallTime forService:ND_DI_APP_INSTALL_TRUST_TIME account:self.bundleIdentifier];
+        [SAMKeychain setPassword:self.trustInstallKey forService:ND_DI_APP_INSTALL_TRUST_KEY account:self.bundleIdentifier];
+    }
 
     return self;
 }
@@ -457,6 +474,8 @@ static NSDictionary *ndDeviceModelAndPpi = nil;
                                    ND_DI_NETWORK_IP : ndDeviceInformationInstance.networkIpAddress,
                                    ND_DI_SDK_PLATFORM : ndDeviceInformationInstance.clientSdkPlatform,
                                    ND_DI_SDK_VERSION : ndDeviceInformationInstance.clientSdkVersion,
+                                   ND_DI_APP_INSTALL_TRUST_TIME : ndDeviceInformationInstance.trustInstallTime,
+                                   ND_DI_APP_INSTALL_TRUST_KEY : ndDeviceInformationInstance.trustInstallKey,
                                    };
         
         return response;

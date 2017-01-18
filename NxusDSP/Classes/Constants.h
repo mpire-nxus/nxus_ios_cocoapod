@@ -50,6 +50,9 @@ extern NSString * const ND_DI_APP_FIRST_LAUNCH;
 extern NSString * const ND_DI_SDK_VERSION;
 extern NSString * const ND_DI_SDK_PLATFORM;
 
+extern NSString * const ND_DI_APP_INSTALL_TRUST_TIME;
+extern NSString * const ND_DI_APP_INSTALL_TRUST_KEY;
+
 extern NSString * const ND_TRACK_APPLICATION_STATS;
 extern NSString * const ND_TRACK_EVENT_NAME;
 extern NSString * const ND_TRACK_EVENT_PARAM;

@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		00F360351B53853CAB00E4A45C1B6F85 /* Pods-NxusDSP_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 79C4A64BB2C0C31F95757D381AC90E10 /* Pods-NxusDSP_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		02A3DCA21E2F5CF000FBCEAE /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02A3DCA11E2F5CF000FBCEAE /* Security.framework */; };
+		02A3DCA71E2F5D5F00FBCEAE /* SAMKeychain.h in Headers */ = {isa = PBXBuildFile; fileRef = 02A3DCA31E2F5D5F00FBCEAE /* SAMKeychain.h */; };
+		02A3DCA81E2F5D5F00FBCEAE /* SAMKeychain.m in Sources */ = {isa = PBXBuildFile; fileRef = 02A3DCA41E2F5D5F00FBCEAE /* SAMKeychain.m */; };
+		02A3DCA91E2F5D5F00FBCEAE /* SAMKeychainQuery.h in Headers */ = {isa = PBXBuildFile; fileRef = 02A3DCA51E2F5D5F00FBCEAE /* SAMKeychainQuery.h */; };
+		02A3DCAA1E2F5D5F00FBCEAE /* SAMKeychainQuery.m in Sources */ = {isa = PBXBuildFile; fileRef = 02A3DCA61E2F5D5F00FBCEAE /* SAMKeychainQuery.m */; };
 		02EB27C11E25199F0023978B /* UIViewController+Tracking.h in Headers */ = {isa = PBXBuildFile; fileRef = 02EB27BF1E25199F0023978B /* UIViewController+Tracking.h */; };
 		02EB27C21E25199F0023978B /* UIViewController+Tracking.m in Sources */ = {isa = PBXBuildFile; fileRef = 02EB27C01E25199F0023978B /* UIViewController+Tracking.m */; };
 		03B9BA1E9CC1B6619B83208E2301D6B2 /* NDDeviceInformation.m in Sources */ = {isa = PBXBuildFile; fileRef = 37267A8AC13CE51E866DC86E19F009B8 /* NDDeviceInformation.m */; };
@@ -50,6 +55,11 @@
 
 /* Begin PBXFileReference section */
 		00F73E9CDF59154D89E2E338CFAB600D /* Pods-NxusDSP_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-NxusDSP_Example.modulemap"; sourceTree = "<group>"; };
+		02A3DCA11E2F5CF000FBCEAE /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.3.sdk/System/Library/Frameworks/Security.framework; sourceTree = DEVELOPER_DIR; };
+		02A3DCA31E2F5D5F00FBCEAE /* SAMKeychain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SAMKeychain.h; sourceTree = "<group>"; };
+		02A3DCA41E2F5D5F00FBCEAE /* SAMKeychain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SAMKeychain.m; sourceTree = "<group>"; };
+		02A3DCA51E2F5D5F00FBCEAE /* SAMKeychainQuery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SAMKeychainQuery.h; sourceTree = "<group>"; };
+		02A3DCA61E2F5D5F00FBCEAE /* SAMKeychainQuery.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SAMKeychainQuery.m; sourceTree = "<group>"; };
 		02EB27BF1E25199F0023978B /* UIViewController+Tracking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+Tracking.h"; sourceTree = "<group>"; };
 		02EB27C01E25199F0023978B /* UIViewController+Tracking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+Tracking.m"; sourceTree = "<group>"; };
 		072B23A949A365A908E3F49CDA1B7C74 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -123,6 +133,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				02A3DCA21E2F5CF000FBCEAE /* Security.framework in Frameworks */,
 				EF6AF8648A79C7C6D281257AC11E3B19 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -168,6 +179,10 @@
 		2ECF830EE309A56A00EFA7C9ED7DCFFF /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				02A3DCA31E2F5D5F00FBCEAE /* SAMKeychain.h */,
+				02A3DCA41E2F5D5F00FBCEAE /* SAMKeychain.m */,
+				02A3DCA51E2F5D5F00FBCEAE /* SAMKeychainQuery.h */,
+				02A3DCA61E2F5D5F00FBCEAE /* SAMKeychainQuery.m */,
 				02EB27BF1E25199F0023978B /* UIViewController+Tracking.h */,
 				02EB27C01E25199F0023978B /* UIViewController+Tracking.m */,
 				65BC097C84A9344AAE0C53DBDCAAD11A /* Constants.h */,
@@ -274,6 +289,7 @@
 		BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				02A3DCA11E2F5CF000FBCEAE /* Security.framework */,
 				3DCAB2B7CDE207B3958B6CB957FCC758 /* iOS */,
 			);
 			name = Frameworks;
@@ -295,8 +311,10 @@
 				626BE4A53B44E0EB70AF11A684EFC3B2 /* NDTrackingWorker.h in Headers */,
 				9C310E7EB16F0567E07B8DD0B5777693 /* NxusDSP-umbrella.h in Headers */,
 				02EB27C11E25199F0023978B /* UIViewController+Tracking.h in Headers */,
+				02A3DCA91E2F5D5F00FBCEAE /* SAMKeychainQuery.h in Headers */,
 				396C4B3AB1B54A8C0F14A6706A78BD5D /* NxusDSP.h in Headers */,
 				D4CAEF2CAAFC8CAE4E5C04AA083B0933 /* TrackingItem.h in Headers */,
+				02A3DCA71E2F5D5F00FBCEAE /* SAMKeychain.h in Headers */,
 				695620B5ECD11BDF1468564DDCB1100C /* TrackingWorkerNSOperation.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -428,6 +446,8 @@
 				5E8CA73CC58C77937054C86D38DB2974 /* NDTrackingWorker.m in Sources */,
 				02EB27C21E25199F0023978B /* UIViewController+Tracking.m in Sources */,
 				A0517A5DD3A7BA097C1C86EEDC469092 /* NxusDSP-dummy.m in Sources */,
+				02A3DCA81E2F5D5F00FBCEAE /* SAMKeychain.m in Sources */,
+				02A3DCAA1E2F5D5F00FBCEAE /* SAMKeychainQuery.m in Sources */,
 				CE19D2D20524B519C719118613D421E4 /* NxusDSP.m in Sources */,
 				DE38AE1E0C16E41873A903D0760A4EEA /* TrackingItem.m in Sources */,
 				BD30A6109E340C8058F6BFEA7BA1D6BB /* TrackingWorkerNSOperation.m in Sources */,
