@@ -18,6 +18,7 @@ NSString * const ND_FINGERPRINT                     = @"fingerprint";
 NSString * const ND_DSP_API_KEY                     = @"dsp.api.key";
 
 NSString * const ND_DI_DEVICE_APPLE_IDFA            = @"device_apple_idfa";
+NSString * const ND_DI_IDFA                         = @"idfa";
 NSString * const ND_DI_APP_USER_UUID                = @"app_user_uuid";
 NSString * const ND_DI_DEVICE_FINGERPRINT_ID        = @"device_fingerprint_id";
 NSString * const ND_DI_DEVICE_GOOGLE_ADVERT_ID      = @"device_google_advert_id";
@@ -74,7 +75,7 @@ NSString * const ND_TRACKING_EVENT_KEY_PREFIX       = @"ND_TRACKING_ITEM_";
 
 NSString * const ND_ADVERTISING_IDENTIFIER          = @"nd.advertising.identifier";
 
-NSString * const ND_SDK_VERSION                     = @"1.0.9";
+NSString * const ND_SDK_VERSION                     = @"1.0.16";
 NSString * const ND_SDK_PLATFORM                    = @"ios_native";
 
 int const ND_TRACKING_OPERATION_SLEEP = 1800;

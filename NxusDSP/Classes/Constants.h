@@ -18,6 +18,7 @@ extern NSString * const ND_FINGERPRINT;
 extern NSString * const ND_DSP_API_KEY;
 
 extern NSString * const ND_DI_DEVICE_APPLE_IDFA;
+extern NSString * const ND_DI_IDFA;
 extern NSString * const ND_DI_APP_USER_UUID;
 extern NSString * const ND_DI_DEVICE_FINGERPRINT_ID;
 extern NSString * const ND_DI_DEVICE_GOOGLE_ADVERT_ID;

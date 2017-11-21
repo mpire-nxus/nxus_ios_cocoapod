@@ -455,6 +455,7 @@ static NSDictionary *ndDeviceModelAndPpi = nil;
                                    ND_DI_APP_USER_UUID: ndDeviceInformationInstance.applicationUserUuid,
                                    ND_DI_DEVICE_FINGERPRINT_ID : ndDeviceInformationInstance.deviceFingerprint,
                                    ND_DI_DEVICE_APPLE_IDFA : ndDeviceInformationInstance.idForAdvertisers,
+                                   ND_DI_IDFA : ndDeviceInformationInstance.idForAdvertisers,
                                    ND_DI_DEVICE_GOOGLE_ADVERT_ID : @"",
                                    ND_DI_DEVICE_HARDWARE_NAME : ndDeviceInformationInstance.deviceHardwareName,
                                    ND_DI_DEVICE_LANG : ndDeviceInformationInstance.deviceLanguageCode,
