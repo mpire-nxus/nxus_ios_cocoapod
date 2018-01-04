@@ -123,6 +123,12 @@
     
     [deviceInformations setObject:attributionData forKey:ND_TRACK_ATTRIBUTION_DATA];
     
+    [deviceInformations setObject:[self testAndConvertArabDateFormat:[deviceInformations objectForKey:ND_DI_APP_INSTALL_TIME]] forKey:ND_DI_APP_INSTALL_TIME];
+    [deviceInformations setObject:[self testAndConvertArabDateFormat:[deviceInformations objectForKey:ND_TRACK_EVENT_TIME]] forKey:ND_TRACK_EVENT_TIME];
+    [deviceInformations setObject:[self testAndConvertArabDateFormat:[deviceInformations objectForKey:ND_DI_APP_FIRST_LAUNCH]] forKey:ND_DI_APP_FIRST_LAUNCH];
+    [deviceInformations setObject:[self testAndConvertArabDateFormat:[deviceInformations objectForKey:ND_DI_APP_INSTALL_TRUST_TIME]] forKey:ND_DI_APP_INSTALL_TRUST_TIME];
+
+    
     //build string object
     NSError *error;
     NSData *jsonData = [NSJSONSerialization dataWithJSONObject:deviceInformations
@@ -140,6 +146,24 @@
     // return
     return @"";
 }
+
+- (NSString*) testAndConvertArabDateFormat:(NSString*)input {
+    NSLog (@"Date is in arab format. Convert.");
+    NSNumberFormatter *formatter = [NSNumberFormatter new];
+    formatter.locale = [NSLocale localeWithLocaleIdentifier:@"fa"]; // first try farsi for good measure!!
+    for (NSInteger i = 0; i < 10; i++) {
+        NSNumber *num = @(i);
+        input = [input stringByReplacingOccurrencesOfString:[formatter stringFromNumber:num] withString:num.stringValue];
+    }
+    
+    formatter.locale = [NSLocale localeWithLocaleIdentifier:@"ar"]; // and now arab numbers
+    for (NSInteger i = 0; i < 10; i++) {
+        NSNumber *num = @(i);
+        input = [input stringByReplacingOccurrencesOfString:[formatter stringFromNumber:num] withString:num.stringValue];
+    }
+    return input;
+}
+
 
 - (NSString *) getS3UrlForTrackingItem: (TrackingItem *)item {
     // get device information
