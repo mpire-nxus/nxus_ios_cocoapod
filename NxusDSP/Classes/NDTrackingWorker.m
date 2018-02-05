@@ -47,6 +47,11 @@ static NDTrackingWorker *ndTrackingWorkerInstance = nil;
     [NDTrackingWorker startTrackingOperation];
 }
 
++(void) track:(TrackingItem *)trackingItem {
+    [NDDataContainer storeTrackingEvent:trackingItem];
+    
+    [NDTrackingWorker startTrackingOperation];
+}
 
 +(void) startTrackingOperation {
     if (!ndTrackingWorkerInstance.operationRunning) {

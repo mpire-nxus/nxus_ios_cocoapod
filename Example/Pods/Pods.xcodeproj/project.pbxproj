@@ -13,6 +13,8 @@
 		02A3DCA81E2F5D5F00FBCEAE /* SAMKeychain.m in Sources */ = {isa = PBXBuildFile; fileRef = 02A3DCA41E2F5D5F00FBCEAE /* SAMKeychain.m */; };
 		02A3DCA91E2F5D5F00FBCEAE /* SAMKeychainQuery.h in Headers */ = {isa = PBXBuildFile; fileRef = 02A3DCA51E2F5D5F00FBCEAE /* SAMKeychainQuery.h */; };
 		02A3DCAA1E2F5D5F00FBCEAE /* SAMKeychainQuery.m in Sources */ = {isa = PBXBuildFile; fileRef = 02A3DCA61E2F5D5F00FBCEAE /* SAMKeychainQuery.m */; };
+		02B9AEF62028A9D700E8FA03 /* CustomTrackingEvents.h in Headers */ = {isa = PBXBuildFile; fileRef = 02B9AEF42028A9D700E8FA03 /* CustomTrackingEvents.h */; };
+		02B9AEF72028A9D700E8FA03 /* CustomTrackingEvents.m in Sources */ = {isa = PBXBuildFile; fileRef = 02B9AEF52028A9D700E8FA03 /* CustomTrackingEvents.m */; };
 		02EB27C11E25199F0023978B /* UIViewController+Tracking.h in Headers */ = {isa = PBXBuildFile; fileRef = 02EB27BF1E25199F0023978B /* UIViewController+Tracking.h */; };
 		02EB27C21E25199F0023978B /* UIViewController+Tracking.m in Sources */ = {isa = PBXBuildFile; fileRef = 02EB27C01E25199F0023978B /* UIViewController+Tracking.m */; };
 		03B9BA1E9CC1B6619B83208E2301D6B2 /* NDDeviceInformation.m in Sources */ = {isa = PBXBuildFile; fileRef = 37267A8AC13CE51E866DC86E19F009B8 /* NDDeviceInformation.m */; };
@@ -60,6 +62,8 @@
 		02A3DCA41E2F5D5F00FBCEAE /* SAMKeychain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SAMKeychain.m; sourceTree = "<group>"; };
 		02A3DCA51E2F5D5F00FBCEAE /* SAMKeychainQuery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SAMKeychainQuery.h; sourceTree = "<group>"; };
 		02A3DCA61E2F5D5F00FBCEAE /* SAMKeychainQuery.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SAMKeychainQuery.m; sourceTree = "<group>"; };
+		02B9AEF42028A9D700E8FA03 /* CustomTrackingEvents.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomTrackingEvents.h; sourceTree = "<group>"; };
+		02B9AEF52028A9D700E8FA03 /* CustomTrackingEvents.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomTrackingEvents.m; sourceTree = "<group>"; };
 		02EB27BF1E25199F0023978B /* UIViewController+Tracking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+Tracking.h"; sourceTree = "<group>"; };
 		02EB27C01E25199F0023978B /* UIViewController+Tracking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+Tracking.m"; sourceTree = "<group>"; };
 		072B23A949A365A908E3F49CDA1B7C74 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -179,6 +183,8 @@
 		2ECF830EE309A56A00EFA7C9ED7DCFFF /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				02B9AEF42028A9D700E8FA03 /* CustomTrackingEvents.h */,
+				02B9AEF52028A9D700E8FA03 /* CustomTrackingEvents.m */,
 				02A3DCA31E2F5D5F00FBCEAE /* SAMKeychain.h */,
 				02A3DCA41E2F5D5F00FBCEAE /* SAMKeychain.m */,
 				02A3DCA51E2F5D5F00FBCEAE /* SAMKeychainQuery.h */,
@@ -304,6 +310,7 @@
 			files = (
 				7A7DD437DBB967877EF4338DEE721BF9 /* Constants.h in Headers */,
 				5F9AD3493B39AB6625DC72B2FDF34F2A /* NDDataContainer.h in Headers */,
+				02B9AEF62028A9D700E8FA03 /* CustomTrackingEvents.h in Headers */,
 				EE8FEA7A99C696927BE781B7D1DD7E5B /* NDDeviceInformation.h in Headers */,
 				A1E9D98092583D3526CD9B00086D728A /* NDHelpers.h in Headers */,
 				D593593123684D3C5964F31A3B8BC123 /* NDLogger.h in Headers */,
@@ -449,6 +456,7 @@
 				02A3DCA81E2F5D5F00FBCEAE /* SAMKeychain.m in Sources */,
 				02A3DCAA1E2F5D5F00FBCEAE /* SAMKeychainQuery.m in Sources */,
 				CE19D2D20524B519C719118613D421E4 /* NxusDSP.m in Sources */,
+				02B9AEF72028A9D700E8FA03 /* CustomTrackingEvents.m in Sources */,
 				DE38AE1E0C16E41873A903D0760A4EEA /* TrackingItem.m in Sources */,
 				BD30A6109E340C8058F6BFEA7BA1D6BB /* TrackingWorkerNSOperation.m in Sources */,
 			);

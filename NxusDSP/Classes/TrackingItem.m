@@ -14,9 +14,21 @@
 
 @implementation TrackingItem
 
+-(id)initWithEventIndex:(NSString *)eventIndex event:(NSString *)event params:(NSMutableDictionary *)params {
+    self = [super init];
+    
+    self.eventIndex = eventIndex;
+    self.event = event;
+    self.params = params;
+    self.time = [[NSDate date] timeIntervalSince1970];
+    
+    return self;
+}
+
 -(id)initWithEventData:(NSString *)event params:(NSMutableDictionary *)params {
     self = [super init];
     
+    self.eventIndex = @"";
     self.event = event;
     self.params = params;
     self.time = [[NSDate date] timeIntervalSince1970];
@@ -28,11 +40,12 @@
     self = [super init];
     
     NSArray *splitData = [trackData componentsSeparatedByString:@";"];
-    self.event = [splitData objectAtIndex:0];
+    self.eventIndex = [splitData objectAtIndex:0];
+    self.event = [splitData objectAtIndex:1];
     
-    if (![[splitData objectAtIndex:1] isEqualToString:@""]) {
+    if (![[splitData objectAtIndex:2] isEqualToString:@""]) {
         NSMutableDictionary *params = [[NSMutableDictionary alloc] init];
-        NSArray *paramData = [[splitData objectAtIndex:1] componentsSeparatedByString:@"&"];
+        NSArray *paramData = [[splitData objectAtIndex:2] componentsSeparatedByString:@"&"];
         
         for (int i = 0; i < [paramData count]; i++) {
             NSArray *currentParam = [paramData[i] componentsSeparatedByString:@"="];
@@ -42,7 +55,7 @@
         self.params = params;
     }
     
-    self.time = [[splitData objectAtIndex:2] doubleValue];
+    self.time = [[splitData objectAtIndex:3] doubleValue];
     
     return self;
 }
@@ -57,7 +70,7 @@
             concatenator = @"&";
         }
     }
-    return [NSString stringWithFormat:@"%@;%@;%f", self.event, tempParams, self.time];
+    return [NSString stringWithFormat:@"%@;%@;%@;%f", self.eventIndex, self.event, tempParams, self.time];
 }
 
 -(NSString *)getTrackingItemKey {

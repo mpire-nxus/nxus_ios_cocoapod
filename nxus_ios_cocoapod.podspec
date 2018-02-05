@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'nxus_ios_cocoapod'
-  s.version          = '1.0.18'
+  s.version          = '1.0.20'
   s.summary          = 'Library for generating attribution events, while also enabling users to track events.'
 
 # This description is used to generate tags and improve search results.

@@ -7,6 +7,7 @@
 
 #import <Foundation/Foundation.h>
 #import "NDDeviceInformation.h"
+#import "TrackingItem.h"
 #import "SafariServices/SFSafariViewController.h"
 
 @interface NDTrackingWorker : NSObject
@@ -16,5 +17,6 @@
 
 +(void) trackLaunch;
 +(void) track:(NSString *) event params:(NSMutableDictionary *) params;
++(void) track:(TrackingItem *)trackingItem;
 
 @end

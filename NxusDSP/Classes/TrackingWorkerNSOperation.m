@@ -111,6 +111,7 @@
 - (NSString *) getJsonObjectForTrackingItem: (TrackingItem *)item {
     NSMutableDictionary* deviceInformations = [[NDDeviceInformation getDeviceInformation] mutableCopy];
 
+    [deviceInformations setObject:[item eventIndex] forKey:ND_TRACK_EVENT_INDEX];
     [deviceInformations setObject:[item event] forKey:ND_TRACK_EVENT_NAME];
     [deviceInformations setObject:[item getParams] forKey:ND_TRACK_EVENT_PARAM];
     [deviceInformations setObject:[item getFormattedTime] forKey:ND_TRACK_EVENT_TIME];
@@ -185,9 +186,18 @@
         delimiter = @"&";
     };
     
+    NSString *eventIndex = [NSString stringWithFormat:@"%@%@=%@", delimiter, ND_TRACK_EVENT_INDEX, [item eventIndex]];
+    response = [response stringByAppendingString: eventIndex];
     NSString *eventName = [NSString stringWithFormat:@"%@%@=%@", delimiter, ND_TRACK_EVENT_NAME, [item event]];
     response = [response stringByAppendingString: eventName];
-    NSString *eventParam = [NSString stringWithFormat:@"%@%@=%@", delimiter, ND_TRACK_EVENT_PARAM, [item getParams]];
+    NSString *encodedParamsValue = (NSString *) CFBridgingRelease(CFURLCreateStringByAddingPercentEscapes(
+                                                                                                          NULL,
+                                                                                                          (CFStringRef)[item getParams],
+                                                                                                          NULL,
+                                                                                                          (CFStringRef)@"!*'();:@&=+$,/?%#[]",
+                                                                                                          kCFStringEncodingUTF8 ));
+    
+    NSString *eventParam = [NSString stringWithFormat:@"%@%@=%@", delimiter, ND_TRACK_EVENT_PARAM, encodedParamsValue];
     response = [response stringByAppendingString: eventParam];
     NSString *eventTime = [NSString stringWithFormat:@"%@%@=%@", delimiter, ND_TRACK_EVENT_TIME, [item getFormattedTime]];
     response = [response stringByAppendingString: eventTime];

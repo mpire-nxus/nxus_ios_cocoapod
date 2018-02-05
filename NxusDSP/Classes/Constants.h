@@ -55,6 +55,7 @@ extern NSString * const ND_DI_APP_INSTALL_TRUST_TIME;
 extern NSString * const ND_DI_APP_INSTALL_TRUST_KEY;
 
 extern NSString * const ND_TRACK_APPLICATION_STATS;
+extern NSString * const ND_TRACK_EVENT_INDEX;
 extern NSString * const ND_TRACK_EVENT_NAME;
 extern NSString * const ND_TRACK_EVENT_PARAM;
 extern NSString * const ND_TRACK_EVENT_TIME;

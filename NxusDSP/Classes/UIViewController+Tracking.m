@@ -51,14 +51,14 @@
 - (void) tracking_viewDidAppear:(BOOL)animated {
     [self tracking_viewDidAppear:animated];
     NSMutableDictionary *params = [[NSMutableDictionary alloc] init];
-    [params setValue:[self class] forKey:@"viewController"];
+    [params setValue:NSStringFromClass([self class]) forKey:@"viewController"];
     [NxusDSP trackEvent:@"view_controller_appeared" params:params];
 }
 
 - (void) tracking_viewDidDisappear:(BOOL)animated {
     [self tracking_viewDidDisappear:animated];
     NSMutableDictionary *params = [[NSMutableDictionary alloc] init];
-    [params setValue:[self class] forKey:@"viewController"];
+    [params setValue:NSStringFromClass([self class]) forKey:@"viewController"];
     [NxusDSP trackEvent:@"view_controller_disappeared" params:params];
 }
 
