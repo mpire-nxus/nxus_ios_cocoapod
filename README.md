@@ -39,6 +39,26 @@ NSMutableDictionary *params = [[NSMutableDictionary alloc] init];
 [NxusDSP trackEvent:event params:params];
 ```
 
+## Sending predefined events
+You can send predefined events using the SDK, with following methods:
+```
+[NxusDSP trackEventInstall:params];
+[NxusDSP trackEventOpen:params];
+[NxusDSP trackEventRegistration:params];
+[NxusDSP trackEventPurchase:params];
+[NxusDSP trackEventLevel:params];
+[NxusDSP trackEventTutorial:params];
+[NxusDSP trackEventAddToCart:params];
+[NxusDSP trackEventCheckout:params];
+[NxusDSP trackEventInvite:params];
+[NxusDSP trackEventAchievement:params];
+```
+Every method takes additional parameters using <b>NSMutableDictionary</b>:
+```
+NSMutableDictionary *params = [[NSMutableDictionary alloc] init];
+[params setValue:@"value" forKey:@"key"];
+```
+
 ## Logging
 To enable logging, call the method debuggingEnabled before library initialisation:
 ```
