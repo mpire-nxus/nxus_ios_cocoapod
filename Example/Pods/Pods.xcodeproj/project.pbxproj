@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		00F360351B53853CAB00E4A45C1B6F85 /* Pods-NxusDSP_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 79C4A64BB2C0C31F95757D381AC90E10 /* Pods-NxusDSP_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		00F360351B53853CAB00E4A45C1B6F85 /* Pods-MpireNxusMeasurement_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 79C4A64BB2C0C31F95757D381AC90E10 /* Pods-MpireNxusMeasurement_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		02A3DCA21E2F5CF000FBCEAE /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02A3DCA11E2F5CF000FBCEAE /* Security.framework */; };
 		02A3DCA71E2F5D5F00FBCEAE /* SAMKeychain.h in Headers */ = {isa = PBXBuildFile; fileRef = 02A3DCA31E2F5D5F00FBCEAE /* SAMKeychain.h */; };
 		02A3DCA81E2F5D5F00FBCEAE /* SAMKeychain.m in Sources */ = {isa = PBXBuildFile; fileRef = 02A3DCA41E2F5D5F00FBCEAE /* SAMKeychain.m */; };
@@ -18,10 +18,10 @@
 		02EB27C11E25199F0023978B /* UIViewController+Tracking.h in Headers */ = {isa = PBXBuildFile; fileRef = 02EB27BF1E25199F0023978B /* UIViewController+Tracking.h */; };
 		02EB27C21E25199F0023978B /* UIViewController+Tracking.m in Sources */ = {isa = PBXBuildFile; fileRef = 02EB27C01E25199F0023978B /* UIViewController+Tracking.m */; };
 		03B9BA1E9CC1B6619B83208E2301D6B2 /* NDDeviceInformation.m in Sources */ = {isa = PBXBuildFile; fileRef = 37267A8AC13CE51E866DC86E19F009B8 /* NDDeviceInformation.m */; };
-		0F66EB383F1E750831136C9117C88E93 /* Pods-NxusDSP_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = B86821670EBA34A0F9FFCEFDADBDB66B /* Pods-NxusDSP_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0F66EB383F1E750831136C9117C88E93 /* Pods-MpireNxusMeasurement_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = B86821670EBA34A0F9FFCEFDADBDB66B /* Pods-MpireNxusMeasurement_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1178BFE6728C5DF90ED4F9EE3DF5E5BA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEC22C73C1608DFA5D5D78BDCB218219 /* Foundation.framework */; };
 		1BB596E8F0CCAFC7CC8027886840BEEA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEC22C73C1608DFA5D5D78BDCB218219 /* Foundation.framework */; };
-		396C4B3AB1B54A8C0F14A6706A78BD5D /* NxusDSP.h in Headers */ = {isa = PBXBuildFile; fileRef = 935406AC95479C72BB510989D043A8A8 /* NxusDSP.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		396C4B3AB1B54A8C0F14A6706A78BD5D /* MpireNxusMeasurement.h in Headers */ = {isa = PBXBuildFile; fileRef = 935406AC95479C72BB510989D043A8A8 /* MpireNxusMeasurement.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		436C4FA12D3C72C3E385473884A78DA7 /* NDLogLevel.h in Headers */ = {isa = PBXBuildFile; fileRef = 97323D73ACD2E0053BAA7752349AC730 /* NDLogLevel.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		53A6F747310CA514EFCF24741AB673CA /* NDLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D6F3827D8F2D49DE9998A9699BEE114 /* NDLogger.m */; };
 		5E8CA73CC58C77937054C86D38DB2974 /* NDTrackingWorker.m in Sources */ = {isa = PBXBuildFile; fileRef = AEA8E7B1565E45080162B411ADD3C29E /* NDTrackingWorker.m */; };
@@ -29,14 +29,14 @@
 		626BE4A53B44E0EB70AF11A684EFC3B2 /* NDTrackingWorker.h in Headers */ = {isa = PBXBuildFile; fileRef = 164AA0DCE81FE5842B2E5D797686ABCF /* NDTrackingWorker.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		695620B5ECD11BDF1468564DDCB1100C /* TrackingWorkerNSOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = FC965995040B7F6CF5D88BBB5CC56ED1 /* TrackingWorkerNSOperation.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7A7DD437DBB967877EF4338DEE721BF9 /* Constants.h in Headers */ = {isa = PBXBuildFile; fileRef = 65BC097C84A9344AAE0C53DBDCAAD11A /* Constants.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		8005DBB74A86498AFEA557EDB7445F48 /* Pods-NxusDSP_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 4923D384E454B71C8426CB10897EB33A /* Pods-NxusDSP_Tests-dummy.m */; };
-		808C60DDFBDCABDDF13949A8B4E4450E /* Pods-NxusDSP_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 0986085F3DC15A8C929DF5643F3A928B /* Pods-NxusDSP_Example-dummy.m */; };
-		9C310E7EB16F0567E07B8DD0B5777693 /* NxusDSP-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 50D97707E2D74FC58EA02D10446B0C35 /* NxusDSP-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		A0517A5DD3A7BA097C1C86EEDC469092 /* NxusDSP-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = ED0E20BD47C543B545F31C02E27803D7 /* NxusDSP-dummy.m */; };
+		8005DBB74A86498AFEA557EDB7445F48 /* Pods-MpireNxusMeasurement_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 4923D384E454B71C8426CB10897EB33A /* Pods-MpireNxusMeasurement_Tests-dummy.m */; };
+		808C60DDFBDCABDDF13949A8B4E4450E /* Pods-MpireNxusMeasurement_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 0986085F3DC15A8C929DF5643F3A928B /* Pods-MpireNxusMeasurement_Example-dummy.m */; };
+		9C310E7EB16F0567E07B8DD0B5777693 /* MpireNxusMeasurement-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 50D97707E2D74FC58EA02D10446B0C35 /* MpireNxusMeasurement-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A0517A5DD3A7BA097C1C86EEDC469092 /* MpireNxusMeasurement-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = ED0E20BD47C543B545F31C02E27803D7 /* MpireNxusMeasurement-dummy.m */; };
 		A1E9D98092583D3526CD9B00086D728A /* NDHelpers.h in Headers */ = {isa = PBXBuildFile; fileRef = 979062E994F40FEA21A1755858BDE1D9 /* NDHelpers.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B7D8BCD540C0508EE067E5C803F7BD62 /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = 918F10FBD34AEACDAB947295DE1EC6C3 /* Constants.m */; };
 		BD30A6109E340C8058F6BFEA7BA1D6BB /* TrackingWorkerNSOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A91C9245094A1161C79184AC443099D /* TrackingWorkerNSOperation.m */; };
-		CE19D2D20524B519C719118613D421E4 /* NxusDSP.m in Sources */ = {isa = PBXBuildFile; fileRef = 22E61B00AD32B01CBA92E0063D22E11E /* NxusDSP.m */; };
+		CE19D2D20524B519C719118613D421E4 /* MpireNxusMeasurement.m in Sources */ = {isa = PBXBuildFile; fileRef = 22E61B00AD32B01CBA92E0063D22E11E /* MpireNxusMeasurement.m */; };
 		D4CAEF2CAAFC8CAE4E5C04AA083B0933 /* TrackingItem.h in Headers */ = {isa = PBXBuildFile; fileRef = 2482465725F5FFC1AD460527135FEA71 /* TrackingItem.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D593593123684D3C5964F31A3B8BC123 /* NDLogger.h in Headers */ = {isa = PBXBuildFile; fileRef = 25A8A6AC28F7B879528115C44BD4C730 /* NDLogger.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		DE38AE1E0C16E41873A903D0760A4EEA /* TrackingItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 56520E9709F6827CA9E268E93790CEA7 /* TrackingItem.m */; };
@@ -56,7 +56,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		00F73E9CDF59154D89E2E338CFAB600D /* Pods-NxusDSP_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-NxusDSP_Example.modulemap"; sourceTree = "<group>"; };
+		00F73E9CDF59154D89E2E338CFAB600D /* Pods-MpireNxusMeasurement_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-MpireNxusMeasurement_Example.modulemap"; sourceTree = "<group>"; };
 		02A3DCA11E2F5CF000FBCEAE /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.3.sdk/System/Library/Frameworks/Security.framework; sourceTree = DEVELOPER_DIR; };
 		02A3DCA31E2F5D5F00FBCEAE /* SAMKeychain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SAMKeychain.h; sourceTree = "<group>"; };
 		02A3DCA41E2F5D5F00FBCEAE /* SAMKeychain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SAMKeychain.m; sourceTree = "<group>"; };
@@ -67,52 +67,52 @@
 		02EB27BF1E25199F0023978B /* UIViewController+Tracking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+Tracking.h"; sourceTree = "<group>"; };
 		02EB27C01E25199F0023978B /* UIViewController+Tracking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+Tracking.m"; sourceTree = "<group>"; };
 		072B23A949A365A908E3F49CDA1B7C74 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		0986085F3DC15A8C929DF5643F3A928B /* Pods-NxusDSP_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-NxusDSP_Example-dummy.m"; sourceTree = "<group>"; };
-		1344FD457DA6FCCC308B5ABB16FE8788 /* Pods-NxusDSP_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-NxusDSP_Example.release.xcconfig"; sourceTree = "<group>"; };
+		0986085F3DC15A8C929DF5643F3A928B /* Pods-MpireNxusMeasurement_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-MpireNxusMeasurement_Example-dummy.m"; sourceTree = "<group>"; };
+		1344FD457DA6FCCC308B5ABB16FE8788 /* Pods-MpireNxusMeasurement_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MpireNxusMeasurement_Example.release.xcconfig"; sourceTree = "<group>"; };
 		143FF9B22458320F5EA2D6B75626ABA5 /* NxusDSP.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = NxusDSP.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		164AA0DCE81FE5842B2E5D797686ABCF /* NDTrackingWorker.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = NDTrackingWorker.h; sourceTree = "<group>"; };
-		22E61B00AD32B01CBA92E0063D22E11E /* NxusDSP.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = NxusDSP.m; sourceTree = "<group>"; };
+		22E61B00AD32B01CBA92E0063D22E11E /* MpireNxusMeasurement.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = MpireNxusMeasurement.m; sourceTree = "<group>"; };
 		2482465725F5FFC1AD460527135FEA71 /* TrackingItem.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = TrackingItem.h; sourceTree = "<group>"; };
 		25A8A6AC28F7B879528115C44BD4C730 /* NDLogger.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = NDLogger.h; sourceTree = "<group>"; };
 		2A0858E5E3EF0946D38424C7066F00DB /* NDDataContainer.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = NDDataContainer.m; sourceTree = "<group>"; };
-		32A018186BF2EEC50CC61A6B399D866E /* Pods-NxusDSP_Example-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-NxusDSP_Example-resources.sh"; sourceTree = "<group>"; };
+		32A018186BF2EEC50CC61A6B399D866E /* Pods-MpireNxusMeasurement_Example-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-MpireNxusMeasurement_Example-resources.sh"; sourceTree = "<group>"; };
 		37267A8AC13CE51E866DC86E19F009B8 /* NDDeviceInformation.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = NDDeviceInformation.m; sourceTree = "<group>"; };
-		3DD0B140DA0BD5E8B20BC182C4830B9B /* Pods-NxusDSP_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-NxusDSP_Tests.debug.xcconfig"; sourceTree = "<group>"; };
-		4923D384E454B71C8426CB10897EB33A /* Pods-NxusDSP_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-NxusDSP_Tests-dummy.m"; sourceTree = "<group>"; };
+		3DD0B140DA0BD5E8B20BC182C4830B9B /* Pods-MpireNxusMeasurement_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MpireNxusMeasurement_Tests.debug.xcconfig"; sourceTree = "<group>"; };
+		4923D384E454B71C8426CB10897EB33A /* Pods-MpireNxusMeasurement_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-MpireNxusMeasurement_Tests-dummy.m"; sourceTree = "<group>"; };
 		4C5D5DD9967FA857ADAB9E0C9597F692 /* Pods_NxusDSP_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NxusDSP_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4D6F3827D8F2D49DE9998A9699BEE114 /* NDLogger.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = NDLogger.m; sourceTree = "<group>"; };
-		508AC7D7601E5B15A0D883CE1B1A9AF9 /* Pods-NxusDSP_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-NxusDSP_Tests.release.xcconfig"; sourceTree = "<group>"; };
-		50D97707E2D74FC58EA02D10446B0C35 /* NxusDSP-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "NxusDSP-umbrella.h"; sourceTree = "<group>"; };
-		54816EF7C2DDED3E93499A7690C3B8A8 /* Pods-NxusDSP_Tests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-NxusDSP_Tests-resources.sh"; sourceTree = "<group>"; };
+		508AC7D7601E5B15A0D883CE1B1A9AF9 /* Pods-MpireNxusMeasurement_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MpireNxusMeasurement_Tests.release.xcconfig"; sourceTree = "<group>"; };
+		50D97707E2D74FC58EA02D10446B0C35 /* MpireNxusMeasurement-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "MpireNxusMeasurement-umbrella.h"; sourceTree = "<group>"; };
+		54816EF7C2DDED3E93499A7690C3B8A8 /* Pods-MpireNxusMeasurement_Tests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-MpireNxusMeasurement_Tests-resources.sh"; sourceTree = "<group>"; };
 		56520E9709F6827CA9E268E93790CEA7 /* TrackingItem.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = TrackingItem.m; sourceTree = "<group>"; };
 		5A41A939315670C1E91AB1E8BC827B43 /* NDDataContainer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = NDDataContainer.h; sourceTree = "<group>"; };
-		5CF3C068983C0A1ECFA0582ECE3F41A5 /* Pods-NxusDSP_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-NxusDSP_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
+		5CF3C068983C0A1ECFA0582ECE3F41A5 /* Pods-MpireNxusMeasurement_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-MpireNxusMeasurement_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
 		634E06FDC48B647FA13DAB70608E3A77 /* Pods_NxusDSP_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NxusDSP_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		65BC097C84A9344AAE0C53DBDCAAD11A /* Constants.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
 		6E67B56FAE4E0671BA9FF9449DBB9991 /* NDDeviceInformation.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = NDDeviceInformation.h; sourceTree = "<group>"; };
-		79C4A64BB2C0C31F95757D381AC90E10 /* Pods-NxusDSP_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-NxusDSP_Example-umbrella.h"; sourceTree = "<group>"; };
-		85F077F7D90C2AB02639DF6BECA657E9 /* Pods-NxusDSP_Tests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-NxusDSP_Tests-frameworks.sh"; sourceTree = "<group>"; };
+		79C4A64BB2C0C31F95757D381AC90E10 /* Pods-MpireNxusMeasurement_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-MpireNxusMeasurement_Example-umbrella.h"; sourceTree = "<group>"; };
+		85F077F7D90C2AB02639DF6BECA657E9 /* Pods-MpireNxusMeasurement_Tests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-MpireNxusMeasurement_Tests-frameworks.sh"; sourceTree = "<group>"; };
 		8A91C9245094A1161C79184AC443099D /* TrackingWorkerNSOperation.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = TrackingWorkerNSOperation.m; sourceTree = "<group>"; };
-		8EB0DACD90A29B8EA021491067A2D3D4 /* NxusDSP-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "NxusDSP-prefix.pch"; sourceTree = "<group>"; };
+		8EB0DACD90A29B8EA021491067A2D3D4 /* MpireNxusMeasurement-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "MpireNxusMeasurement-prefix.pch"; sourceTree = "<group>"; };
 		918F10FBD34AEACDAB947295DE1EC6C3 /* Constants.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = Constants.m; sourceTree = "<group>"; };
-		935406AC95479C72BB510989D043A8A8 /* NxusDSP.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = NxusDSP.h; sourceTree = "<group>"; };
+		935406AC95479C72BB510989D043A8A8 /* MpireNxusMeasurement.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = MpireNxusMeasurement.h; sourceTree = "<group>"; };
 		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		944AE4819E57B46F35C2459AD14403ED /* Pods-NxusDSP_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-NxusDSP_Example.debug.xcconfig"; sourceTree = "<group>"; };
+		944AE4819E57B46F35C2459AD14403ED /* Pods-MpireNxusMeasurement_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MpireNxusMeasurement_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		97323D73ACD2E0053BAA7752349AC730 /* NDLogLevel.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = NDLogLevel.h; sourceTree = "<group>"; };
 		979062E994F40FEA21A1755858BDE1D9 /* NDHelpers.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = NDHelpers.h; sourceTree = "<group>"; };
 		A6DA8F345CBFCA46246F41A79B86EE26 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AEA8E7B1565E45080162B411ADD3C29E /* NDTrackingWorker.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = NDTrackingWorker.m; sourceTree = "<group>"; };
-		B24F403B752EB70EC9B7F00C4EC78E33 /* NxusDSP.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = NxusDSP.modulemap; sourceTree = "<group>"; };
+		B24F403B752EB70EC9B7F00C4EC78E33 /* MpireNxusMeasurement.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = MpireNxusMeasurement.modulemap; sourceTree = "<group>"; };
 		B77104FCDF1C1BE54D638D18C4926053 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		B86821670EBA34A0F9FFCEFDADBDB66B /* Pods-NxusDSP_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-NxusDSP_Tests-umbrella.h"; sourceTree = "<group>"; };
+		B86821670EBA34A0F9FFCEFDADBDB66B /* Pods-MpireNxusMeasurement_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-MpireNxusMeasurement_Tests-umbrella.h"; sourceTree = "<group>"; };
 		CEC22C73C1608DFA5D5D78BDCB218219 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		D09717DC1B179B04D2A906E93EE95DCA /* Pods-NxusDSP_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-NxusDSP_Example-acknowledgements.plist"; sourceTree = "<group>"; };
-		D7B9A6503BECFFB8B46DDEE8E569A7E4 /* Pods-NxusDSP_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-NxusDSP_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
-		DBBA4474529B1858C58DF26912273C46 /* Pods-NxusDSP_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-NxusDSP_Example-frameworks.sh"; sourceTree = "<group>"; };
-		E997C1321DBBFA398838AD56F4723FA6 /* Pods-NxusDSP_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-NxusDSP_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
-		ED0E20BD47C543B545F31C02E27803D7 /* NxusDSP-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "NxusDSP-dummy.m"; sourceTree = "<group>"; };
-		F008A139FED22EBC233200315AD6DE0B /* Pods-NxusDSP_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-NxusDSP_Tests.modulemap"; sourceTree = "<group>"; };
-		F2A88884867B479B1F8829C3C9EC3047 /* NxusDSP.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = NxusDSP.xcconfig; sourceTree = "<group>"; };
+		D09717DC1B179B04D2A906E93EE95DCA /* Pods-MpireNxusMeasurement_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-MpireNxusMeasurement_Example-acknowledgements.plist"; sourceTree = "<group>"; };
+		D7B9A6503BECFFB8B46DDEE8E569A7E4 /* Pods-MpireNxusMeasurement_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; path = "Pods-MpireNxusMeasurement_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
+		DBBA4474529B1858C58DF26912273C46 /* Pods-MpireNxusMeasurement_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-MpireNxusMeasurement_Example-frameworks.sh"; sourceTree = "<group>"; };
+		E997C1321DBBFA398838AD56F4723FA6 /* Pods-MpireNxusMeasurement_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; path = "Pods-MpireNxusMeasurement_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		ED0E20BD47C543B545F31C02E27803D7 /* MpireNxusMeasurement-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "MpireNxusMeasurement-dummy.m"; sourceTree = "<group>"; };
+		F008A139FED22EBC233200315AD6DE0B /* Pods-MpireNxusMeasurement_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-MpireNxusMeasurement_Tests.modulemap"; sourceTree = "<group>"; };
+		F2A88884867B479B1F8829C3C9EC3047 /* MpireNxusMeasurement.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = MpireNxusMeasurement.xcconfig; sourceTree = "<group>"; };
 		FC965995040B7F6CF5D88BBB5CC56ED1 /* TrackingWorkerNSOperation.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = TrackingWorkerNSOperation.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -148,36 +148,36 @@
 		0BDB89B37607C93F9D3DBAC9E9EEECA3 /* Targets Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				2FB6D63D072994FE87668549E43A9145 /* Pods-NxusDSP_Example */,
-				1F9DB82DBD3C0454AE046830825002E6 /* Pods-NxusDSP_Tests */,
+				2FB6D63D072994FE87668549E43A9145 /* Pods-MpireNxusMeasurement_Example */,
+				1F9DB82DBD3C0454AE046830825002E6 /* Pods-MpireNxusMeasurement_Tests */,
 			);
 			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
-		1F9DB82DBD3C0454AE046830825002E6 /* Pods-NxusDSP_Tests */ = {
+		1F9DB82DBD3C0454AE046830825002E6 /* Pods-MpireNxusMeasurement_Tests */ = {
 			isa = PBXGroup;
 			children = (
 				B77104FCDF1C1BE54D638D18C4926053 /* Info.plist */,
-				F008A139FED22EBC233200315AD6DE0B /* Pods-NxusDSP_Tests.modulemap */,
-				E997C1321DBBFA398838AD56F4723FA6 /* Pods-NxusDSP_Tests-acknowledgements.markdown */,
-				5CF3C068983C0A1ECFA0582ECE3F41A5 /* Pods-NxusDSP_Tests-acknowledgements.plist */,
-				4923D384E454B71C8426CB10897EB33A /* Pods-NxusDSP_Tests-dummy.m */,
-				85F077F7D90C2AB02639DF6BECA657E9 /* Pods-NxusDSP_Tests-frameworks.sh */,
-				54816EF7C2DDED3E93499A7690C3B8A8 /* Pods-NxusDSP_Tests-resources.sh */,
-				B86821670EBA34A0F9FFCEFDADBDB66B /* Pods-NxusDSP_Tests-umbrella.h */,
-				3DD0B140DA0BD5E8B20BC182C4830B9B /* Pods-NxusDSP_Tests.debug.xcconfig */,
-				508AC7D7601E5B15A0D883CE1B1A9AF9 /* Pods-NxusDSP_Tests.release.xcconfig */,
+				F008A139FED22EBC233200315AD6DE0B /* Pods-MpireNxusMeasurement_Tests.modulemap */,
+				E997C1321DBBFA398838AD56F4723FA6 /* Pods-MpireNxusMeasurement_Tests-acknowledgements.markdown */,
+				5CF3C068983C0A1ECFA0582ECE3F41A5 /* Pods-MpireNxusMeasurement_Tests-acknowledgements.plist */,
+				4923D384E454B71C8426CB10897EB33A /* Pods-MpireNxusMeasurement_Tests-dummy.m */,
+				85F077F7D90C2AB02639DF6BECA657E9 /* Pods-MpireNxusMeasurement_Tests-frameworks.sh */,
+				54816EF7C2DDED3E93499A7690C3B8A8 /* Pods-MpireNxusMeasurement_Tests-resources.sh */,
+				B86821670EBA34A0F9FFCEFDADBDB66B /* Pods-MpireNxusMeasurement_Tests-umbrella.h */,
+				3DD0B140DA0BD5E8B20BC182C4830B9B /* Pods-MpireNxusMeasurement_Tests.debug.xcconfig */,
+				508AC7D7601E5B15A0D883CE1B1A9AF9 /* Pods-MpireNxusMeasurement_Tests.release.xcconfig */,
 			);
-			name = "Pods-NxusDSP_Tests";
-			path = "Target Support Files/Pods-NxusDSP_Tests";
+			name = "Pods-MpireNxusMeasurement_Tests";
+			path = "Target Support Files/Pods-MpireNxusMeasurement_Tests";
 			sourceTree = "<group>";
 		};
-		2E7C824BDE2B580FAFB95C683B65A0B0 /* NxusDSP */ = {
+		2E7C824BDE2B580FAFB95C683B65A0B0 /* MpireNxusMeasurement */ = {
 			isa = PBXGroup;
 			children = (
 				2ECF830EE309A56A00EFA7C9ED7DCFFF /* Classes */,
 			);
-			path = NxusDSP;
+			path = MpireNxusMeasurement;
 			sourceTree = "<group>";
 		};
 		2ECF830EE309A56A00EFA7C9ED7DCFFF /* Classes */ = {
@@ -203,8 +203,8 @@
 				97323D73ACD2E0053BAA7752349AC730 /* NDLogLevel.h */,
 				164AA0DCE81FE5842B2E5D797686ABCF /* NDTrackingWorker.h */,
 				AEA8E7B1565E45080162B411ADD3C29E /* NDTrackingWorker.m */,
-				935406AC95479C72BB510989D043A8A8 /* NxusDSP.h */,
-				22E61B00AD32B01CBA92E0063D22E11E /* NxusDSP.m */,
+				935406AC95479C72BB510989D043A8A8 /* MpireNxusMeasurement.h */,
+				22E61B00AD32B01CBA92E0063D22E11E /* MpireNxusMeasurement.m */,
 				2482465725F5FFC1AD460527135FEA71 /* TrackingItem.h */,
 				56520E9709F6827CA9E268E93790CEA7 /* TrackingItem.m */,
 				FC965995040B7F6CF5D88BBB5CC56ED1 /* TrackingWorkerNSOperation.h */,
@@ -213,22 +213,22 @@
 			path = Classes;
 			sourceTree = "<group>";
 		};
-		2FB6D63D072994FE87668549E43A9145 /* Pods-NxusDSP_Example */ = {
+		2FB6D63D072994FE87668549E43A9145 /* Pods-MpireNxusMeasurement_Example */ = {
 			isa = PBXGroup;
 			children = (
 				072B23A949A365A908E3F49CDA1B7C74 /* Info.plist */,
-				00F73E9CDF59154D89E2E338CFAB600D /* Pods-NxusDSP_Example.modulemap */,
-				D7B9A6503BECFFB8B46DDEE8E569A7E4 /* Pods-NxusDSP_Example-acknowledgements.markdown */,
-				D09717DC1B179B04D2A906E93EE95DCA /* Pods-NxusDSP_Example-acknowledgements.plist */,
-				0986085F3DC15A8C929DF5643F3A928B /* Pods-NxusDSP_Example-dummy.m */,
-				DBBA4474529B1858C58DF26912273C46 /* Pods-NxusDSP_Example-frameworks.sh */,
-				32A018186BF2EEC50CC61A6B399D866E /* Pods-NxusDSP_Example-resources.sh */,
-				79C4A64BB2C0C31F95757D381AC90E10 /* Pods-NxusDSP_Example-umbrella.h */,
-				944AE4819E57B46F35C2459AD14403ED /* Pods-NxusDSP_Example.debug.xcconfig */,
-				1344FD457DA6FCCC308B5ABB16FE8788 /* Pods-NxusDSP_Example.release.xcconfig */,
+				00F73E9CDF59154D89E2E338CFAB600D /* Pods-MpireNxusMeasurement_Example.modulemap */,
+				D7B9A6503BECFFB8B46DDEE8E569A7E4 /* Pods-MpireNxusMeasurement_Example-acknowledgements.markdown */,
+				D09717DC1B179B04D2A906E93EE95DCA /* Pods-MpireNxusMeasurement_Example-acknowledgements.plist */,
+				0986085F3DC15A8C929DF5643F3A928B /* Pods-MpireNxusMeasurement_Example-dummy.m */,
+				DBBA4474529B1858C58DF26912273C46 /* Pods-MpireNxusMeasurement_Example-frameworks.sh */,
+				32A018186BF2EEC50CC61A6B399D866E /* Pods-MpireNxusMeasurement_Example-resources.sh */,
+				79C4A64BB2C0C31F95757D381AC90E10 /* Pods-MpireNxusMeasurement_Example-umbrella.h */,
+				944AE4819E57B46F35C2459AD14403ED /* Pods-MpireNxusMeasurement_Example.debug.xcconfig */,
+				1344FD457DA6FCCC308B5ABB16FE8788 /* Pods-MpireNxusMeasurement_Example.release.xcconfig */,
 			);
-			name = "Pods-NxusDSP_Example";
-			path = "Target Support Files/Pods-NxusDSP_Example";
+			name = "Pods-MpireNxusMeasurement_Example";
+			path = "Target Support Files/Pods-MpireNxusMeasurement_Example";
 			sourceTree = "<group>";
 		};
 		3DCAB2B7CDE207B3958B6CB957FCC758 /* iOS */ = {
@@ -239,13 +239,13 @@
 			name = iOS;
 			sourceTree = "<group>";
 		};
-		572C0C93D90A987F2358320A08C525C9 /* NxusDSP */ = {
+		572C0C93D90A987F2358320A08C525C9 /* MpireNxusMeasurement */ = {
 			isa = PBXGroup;
 			children = (
-				2E7C824BDE2B580FAFB95C683B65A0B0 /* NxusDSP */,
+				2E7C824BDE2B580FAFB95C683B65A0B0 /* MpireNxusMeasurement */,
 				64912352A04B32BEA6A2388B0414967F /* Support Files */,
 			);
-			name = NxusDSP;
+			name = MpireNxusMeasurement;
 			path = ../..;
 			sourceTree = "<group>";
 		};
@@ -253,11 +253,11 @@
 			isa = PBXGroup;
 			children = (
 				A6DA8F345CBFCA46246F41A79B86EE26 /* Info.plist */,
-				B24F403B752EB70EC9B7F00C4EC78E33 /* NxusDSP.modulemap */,
-				F2A88884867B479B1F8829C3C9EC3047 /* NxusDSP.xcconfig */,
-				ED0E20BD47C543B545F31C02E27803D7 /* NxusDSP-dummy.m */,
-				8EB0DACD90A29B8EA021491067A2D3D4 /* NxusDSP-prefix.pch */,
-				50D97707E2D74FC58EA02D10446B0C35 /* NxusDSP-umbrella.h */,
+				B24F403B752EB70EC9B7F00C4EC78E33 /* MpireNxusMeasurement.modulemap */,
+				F2A88884867B479B1F8829C3C9EC3047 /* MpireNxusMeasurement.xcconfig */,
+				ED0E20BD47C543B545F31C02E27803D7 /* MpireNxusMeasurement-dummy.m */,
+				8EB0DACD90A29B8EA021491067A2D3D4 /* MpireNxusMeasurement-prefix.pch */,
+				50D97707E2D74FC58EA02D10446B0C35 /* MpireNxusMeasurement-umbrella.h */,
 			);
 			name = "Support Files";
 			path = "Example/Pods/Target Support Files/NxusDSP";
@@ -277,7 +277,7 @@
 		84CEF2B2F477B3A42A98C743E5F2D239 /* Development Pods */ = {
 			isa = PBXGroup;
 			children = (
-				572C0C93D90A987F2358320A08C525C9 /* NxusDSP */,
+				572C0C93D90A987F2358320A08C525C9 /* MpireNxusMeasurement */,
 			);
 			name = "Development Pods";
 			sourceTree = "<group>";
@@ -316,10 +316,10 @@
 				D593593123684D3C5964F31A3B8BC123 /* NDLogger.h in Headers */,
 				436C4FA12D3C72C3E385473884A78DA7 /* NDLogLevel.h in Headers */,
 				626BE4A53B44E0EB70AF11A684EFC3B2 /* NDTrackingWorker.h in Headers */,
-				9C310E7EB16F0567E07B8DD0B5777693 /* NxusDSP-umbrella.h in Headers */,
+				9C310E7EB16F0567E07B8DD0B5777693 /* MpireNxusMeasurement-umbrella.h in Headers */,
 				02EB27C11E25199F0023978B /* UIViewController+Tracking.h in Headers */,
 				02A3DCA91E2F5D5F00FBCEAE /* SAMKeychainQuery.h in Headers */,
-				396C4B3AB1B54A8C0F14A6706A78BD5D /* NxusDSP.h in Headers */,
+				396C4B3AB1B54A8C0F14A6706A78BD5D /* MpireNxusMeasurement.h in Headers */,
 				D4CAEF2CAAFC8CAE4E5C04AA083B0933 /* TrackingItem.h in Headers */,
 				02A3DCA71E2F5D5F00FBCEAE /* SAMKeychain.h in Headers */,
 				695620B5ECD11BDF1468564DDCB1100C /* TrackingWorkerNSOperation.h in Headers */,
@@ -330,7 +330,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				00F360351B53853CAB00E4A45C1B6F85 /* Pods-NxusDSP_Example-umbrella.h in Headers */,
+				00F360351B53853CAB00E4A45C1B6F85 /* Pods-MpireNxusMeasurement_Example-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -338,16 +338,16 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0F66EB383F1E750831136C9117C88E93 /* Pods-NxusDSP_Tests-umbrella.h in Headers */,
+				0F66EB383F1E750831136C9117C88E93 /* Pods-MpireNxusMeasurement_Tests-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		01974C91F10E1D7C17E36CD1F2C13D7B /* NxusDSP */ = {
+		01974C91F10E1D7C17E36CD1F2C13D7B /* MpireNxusMeasurement */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = EF54DAC73358210E7B085A88B35A7A8E /* Build configuration list for PBXNativeTarget "NxusDSP" */;
+			buildConfigurationList = EF54DAC73358210E7B085A88B35A7A8E /* Build configuration list for PBXNativeTarget "MpireNxusMeasurement" */;
 			buildPhases = (
 				BA5477E1A81A0D3638F7DEF4CC9F4D2E /* Sources */,
 				AF83116980EEBCFFCAF1EB28105BFE35 /* Frameworks */,
@@ -357,14 +357,14 @@
 			);
 			dependencies = (
 			);
-			name = NxusDSP;
+			name = MpireNxusMeasurement;
 			productName = NxusDSP;
 			productReference = 143FF9B22458320F5EA2D6B75626ABA5 /* NxusDSP.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		4657D21FD180F5ED4A6F962AD1F82485 /* Pods-NxusDSP_Example */ = {
+		4657D21FD180F5ED4A6F962AD1F82485 /* Pods-MpireNxusMeasurement_Example */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 8F39433F028200E1FF202C4B4FB656C4 /* Build configuration list for PBXNativeTarget "Pods-NxusDSP_Example" */;
+			buildConfigurationList = 8F39433F028200E1FF202C4B4FB656C4 /* Build configuration list for PBXNativeTarget "Pods-MpireNxusMeasurement_Example" */;
 			buildPhases = (
 				116CFD174E018F03B8C84765E613B975 /* Sources */,
 				A80996B8B01CF0D4F6A096FE6CCDA808 /* Frameworks */,
@@ -375,14 +375,14 @@
 			dependencies = (
 				CD489CFAFF824165337C1F5074818A18 /* PBXTargetDependency */,
 			);
-			name = "Pods-NxusDSP_Example";
+			name = "Pods-MpireNxusMeasurement_Example";
 			productName = "Pods-NxusDSP_Example";
 			productReference = 4C5D5DD9967FA857ADAB9E0C9597F692 /* Pods_NxusDSP_Example.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		F699187CA815589A844881E2D2337480 /* Pods-NxusDSP_Tests */ = {
+		F699187CA815589A844881E2D2337480 /* Pods-MpireNxusMeasurement_Tests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 2F7682DD26F888B34BB931C1D07E9F2B /* Build configuration list for PBXNativeTarget "Pods-NxusDSP_Tests" */;
+			buildConfigurationList = 2F7682DD26F888B34BB931C1D07E9F2B /* Build configuration list for PBXNativeTarget "Pods-MpireNxusMeasurement_Tests" */;
 			buildPhases = (
 				1D90260724B32E7761B5E0F8B68F78B7 /* Sources */,
 				5BB08CE68DA93E246566C9ADCFB93D85 /* Frameworks */,
@@ -392,7 +392,7 @@
 			);
 			dependencies = (
 			);
-			name = "Pods-NxusDSP_Tests";
+			name = "Pods-MpireNxusMeasurement_Tests";
 			productName = "Pods-NxusDSP_Tests";
 			productReference = 634E06FDC48B647FA13DAB70608E3A77 /* Pods_NxusDSP_Tests.framework */;
 			productType = "com.apple.product-type.framework";
@@ -418,9 +418,9 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				01974C91F10E1D7C17E36CD1F2C13D7B /* NxusDSP */,
-				4657D21FD180F5ED4A6F962AD1F82485 /* Pods-NxusDSP_Example */,
-				F699187CA815589A844881E2D2337480 /* Pods-NxusDSP_Tests */,
+				01974C91F10E1D7C17E36CD1F2C13D7B /* MpireNxusMeasurement */,
+				4657D21FD180F5ED4A6F962AD1F82485 /* Pods-MpireNxusMeasurement_Example */,
+				F699187CA815589A844881E2D2337480 /* Pods-MpireNxusMeasurement_Tests */,
 			);
 		};
 /* End PBXProject section */
@@ -430,7 +430,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				808C60DDFBDCABDDF13949A8B4E4450E /* Pods-NxusDSP_Example-dummy.m in Sources */,
+				808C60DDFBDCABDDF13949A8B4E4450E /* Pods-MpireNxusMeasurement_Example-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -438,7 +438,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8005DBB74A86498AFEA557EDB7445F48 /* Pods-NxusDSP_Tests-dummy.m in Sources */,
+				8005DBB74A86498AFEA557EDB7445F48 /* Pods-MpireNxusMeasurement_Tests-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -452,10 +452,10 @@
 				53A6F747310CA514EFCF24741AB673CA /* NDLogger.m in Sources */,
 				5E8CA73CC58C77937054C86D38DB2974 /* NDTrackingWorker.m in Sources */,
 				02EB27C21E25199F0023978B /* UIViewController+Tracking.m in Sources */,
-				A0517A5DD3A7BA097C1C86EEDC469092 /* NxusDSP-dummy.m in Sources */,
+				A0517A5DD3A7BA097C1C86EEDC469092 /* MpireNxusMeasurement-dummy.m in Sources */,
 				02A3DCA81E2F5D5F00FBCEAE /* SAMKeychain.m in Sources */,
 				02A3DCAA1E2F5D5F00FBCEAE /* SAMKeychainQuery.m in Sources */,
-				CE19D2D20524B519C719118613D421E4 /* NxusDSP.m in Sources */,
+				CE19D2D20524B519C719118613D421E4 /* MpireNxusMeasurement.m in Sources */,
 				02B9AEF72028A9D700E8FA03 /* CustomTrackingEvents.m in Sources */,
 				DE38AE1E0C16E41873A903D0760A4EEA /* TrackingItem.m in Sources */,
 				BD30A6109E340C8058F6BFEA7BA1D6BB /* TrackingWorkerNSOperation.m in Sources */,
@@ -468,7 +468,7 @@
 		CD489CFAFF824165337C1F5074818A18 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = NxusDSP;
-			target = 01974C91F10E1D7C17E36CD1F2C13D7B /* NxusDSP */;
+			target = 01974C91F10E1D7C17E36CD1F2C13D7B /* MpireNxusMeasurement */;
 			targetProxy = 87A1BA7485D09EF0A1DBEFE79EE0102A /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -476,7 +476,7 @@
 /* Begin XCBuildConfiguration section */
 		05F0CCD411B8BDFA1D6AC0535223F87C /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1344FD457DA6FCCC308B5ABB16FE8788 /* Pods-NxusDSP_Example.release.xcconfig */;
+			baseConfigurationReference = 1344FD457DA6FCCC308B5ABB16FE8788 /* Pods-MpireNxusMeasurement_Example.release.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
@@ -497,7 +497,7 @@
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
 				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.Pods-MpireNxusMeasurement-Example";
 				PRODUCT_NAME = Pods_NxusDSP_Example;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
@@ -547,7 +547,7 @@
 		};
 		5A766E30BD252974F1C5491C64664245 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3DD0B140DA0BD5E8B20BC182C4830B9B /* Pods-NxusDSP_Tests.debug.xcconfig */;
+			baseConfigurationReference = 3DD0B140DA0BD5E8B20BC182C4830B9B /* Pods-MpireNxusMeasurement_Tests.debug.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
@@ -568,7 +568,7 @@
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
 				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.Pods-MpireNxusMeasurement-Tests";
 				PRODUCT_NAME = Pods_NxusDSP_Tests;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
@@ -580,7 +580,7 @@
 		};
 		80AC0CF5701F87A795A9B040A46BF501 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F2A88884867B479B1F8829C3C9EC3047 /* NxusDSP.xcconfig */;
+			baseConfigurationReference = F2A88884867B479B1F8829C3C9EC3047 /* MpireNxusMeasurement.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
@@ -598,6 +598,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MODULEMAP_FILE = "Target Support Files/NxusDSP/NxusDSP.modulemap";
 				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = org.cocoapods.MpireNxusMeasurement;
 				PRODUCT_NAME = NxusDSP;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
@@ -609,7 +610,7 @@
 		};
 		B211F3B88AEE110A1BB965389B1AAB97 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 944AE4819E57B46F35C2459AD14403ED /* Pods-NxusDSP_Example.debug.xcconfig */;
+			baseConfigurationReference = 944AE4819E57B46F35C2459AD14403ED /* Pods-MpireNxusMeasurement_Example.debug.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
@@ -630,7 +631,7 @@
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
 				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.Pods-MpireNxusMeasurement-Example";
 				PRODUCT_NAME = Pods_NxusDSP_Example;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
@@ -684,7 +685,7 @@
 		};
 		DCE4CC8B307275399B09F3D8CB307848 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F2A88884867B479B1F8829C3C9EC3047 /* NxusDSP.xcconfig */;
+			baseConfigurationReference = F2A88884867B479B1F8829C3C9EC3047 /* MpireNxusMeasurement.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
@@ -702,6 +703,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MODULEMAP_FILE = "Target Support Files/NxusDSP/NxusDSP.modulemap";
 				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = org.cocoapods.MpireNxusMeasurement;
 				PRODUCT_NAME = NxusDSP;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
@@ -713,7 +715,7 @@
 		};
 		F4775B99E36F23A3CF34C1A8B6FA6489 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 508AC7D7601E5B15A0D883CE1B1A9AF9 /* Pods-NxusDSP_Tests.release.xcconfig */;
+			baseConfigurationReference = 508AC7D7601E5B15A0D883CE1B1A9AF9 /* Pods-MpireNxusMeasurement_Tests.release.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
@@ -734,7 +736,7 @@
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
 				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.Pods-MpireNxusMeasurement-Tests";
 				PRODUCT_NAME = Pods_NxusDSP_Tests;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
@@ -756,7 +758,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		2F7682DD26F888B34BB931C1D07E9F2B /* Build configuration list for PBXNativeTarget "Pods-NxusDSP_Tests" */ = {
+		2F7682DD26F888B34BB931C1D07E9F2B /* Build configuration list for PBXNativeTarget "Pods-MpireNxusMeasurement_Tests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				5A766E30BD252974F1C5491C64664245 /* Debug */,
@@ -765,7 +767,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		8F39433F028200E1FF202C4B4FB656C4 /* Build configuration list for PBXNativeTarget "Pods-NxusDSP_Example" */ = {
+		8F39433F028200E1FF202C4B4FB656C4 /* Build configuration list for PBXNativeTarget "Pods-MpireNxusMeasurement_Example" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				B211F3B88AEE110A1BB965389B1AAB97 /* Debug */,
@@ -774,7 +776,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		EF54DAC73358210E7B085A88B35A7A8E /* Build configuration list for PBXNativeTarget "NxusDSP" */ = {
+		EF54DAC73358210E7B085A88B35A7A8E /* Build configuration list for PBXNativeTarget "MpireNxusMeasurement" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				DCE4CC8B307275399B09F3D8CB307848 /* Debug */,

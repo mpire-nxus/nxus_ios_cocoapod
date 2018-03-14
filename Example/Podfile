@@ -1,9 +1,9 @@
 use_frameworks!
 
-target 'nxus_ios_cocoapod_Example' do
-  pod 'nxus_ios_cocoapod', :path => '../'
+target 'mpire_nxus_measurement_Example' do
+  pod 'mpire_nxus_measurement', :path => '../'
 
-  target 'nxus_ios_cocoapod_Tests' do
+  target 'mpire_nxus_measurement_Tests' do
     inherit! :search_paths
 
     

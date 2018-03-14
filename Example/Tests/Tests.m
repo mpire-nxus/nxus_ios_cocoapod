@@ -2,8 +2,6 @@
 //  NxusDSPTests.m
 //  NxusDSPTests
 //
-//  Created by Tomislav Tusek on 07/27/2016.
-//  Copyright (c) 2016 Tomislav Tusek. All rights reserved.
 //
 
 @import XCTest;

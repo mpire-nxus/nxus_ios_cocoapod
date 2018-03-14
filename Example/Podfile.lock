@@ -1,15 +1,15 @@
 PODS:
-  - NxusDSP (0.1.0)
+  - MpireNxusMeasurement (0.1.0)
 
 DEPENDENCIES:
-  - NxusDSP (from `../`)
+  - MpireNxusMeasurement (from `../`)
 
 EXTERNAL SOURCES:
-  NxusDSP:
+  MpireNxusMeasurement:
     :path: "../"
 
 SPEC CHECKSUMS:
-  NxusDSP: f6948cc0d047c814dfc3b6b314b61411ff2af887
+  MpireNxusMeasurement: f6948cc0d047c814dfc3b6b314b61411ff2af887
 
 PODFILE CHECKSUM: af2d25928c50662caef4760795b43d031e3b824b
 
