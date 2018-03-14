@@ -1,6 +1,6 @@
-[![Version](https://img.shields.io/cocoapods/v/nxus_ios_cocoapod.svg?style=flat)](http://cocoapods.org/pods/nxus_ios_cocoapod)
-[![License](https://img.shields.io/cocoapods/l/nxus_ios_cocoapod.svg?style=flat)](http://cocoapods.org/pods/nxus_ios_cocoapod)
-[![Platform](https://img.shields.io/cocoapods/p/nxus_ios_cocoapod.svg?style=flat)](http://cocoapods.org/pods/nxus_ios_cocoapod)
+[![Version](https://img.shields.io/cocoapods/v/mpire_nxus_measurement.svg?style=flat)](http://cocoapods.org/pods/mpire_nxus_measurement)
+[![License](https://img.shields.io/cocoapods/l/mpire_nxus_measurement.svg?style=flat)](http://cocoapods.org/pods/mpire_nxus_measurement)
+[![Platform](https://img.shields.io/cocoapods/p/mpire_nxus_measurement.svg?style=flat)](http://cocoapods.org/pods/mpire_nxus_measurement)
 
 ## Summary
 TechMpire nxus platform SDK CocoaPods distribution for iOS developers
