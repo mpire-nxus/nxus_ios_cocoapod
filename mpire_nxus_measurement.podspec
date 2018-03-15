@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'mpire_nxus_measurement'
-  s.version          = '1.1.1'
+  s.version          = '1.1.2'
   s.summary          = 'Library for generating attribution events, while also enabling users to track events.'
 
 # This description is used to generate tags and improve search results.

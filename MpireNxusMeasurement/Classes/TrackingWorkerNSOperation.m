@@ -127,7 +127,8 @@
     NSData *requestData = [paramsUri dataUsingEncoding:NSUTF8StringEncoding];
     
     [request setHTTPMethod:@"POST"];
-    [request setValue:@"application/json" forHTTPHeaderField:@"Accept"];
+    [request setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Content-Type"];
+    [request setValue:@"utf-8" forHTTPHeaderField:@"charset"];
     [request setValue:[NSString stringWithFormat:@"%lu", (unsigned long)[paramsUri length]] forHTTPHeaderField:@"Content-Length"];
     [request setHTTPBody:requestData];
     
