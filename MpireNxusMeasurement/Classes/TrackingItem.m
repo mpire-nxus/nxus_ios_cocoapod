@@ -90,6 +90,10 @@
     return tempParams;
 }
 
+- (NSMutableDictionary *)getParamsDictionary {
+    return self.params;
+}
+
 -(NSString *)getFormattedTime {
     NSDate *tempTime = [NSDate dateWithTimeIntervalSince1970:self.time];
     return [NDDeviceInformation formatDate:tempTime];

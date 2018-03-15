@@ -9,8 +9,7 @@
 
 @implementation Constants
 
-NSString * const ND_SERVER_BASE_URL_EVENT           = @"https://sdk.mpire.eventnx.us/";
-NSString * const ND_SERVER_BASE_URL_ATTRIBUTION     = @"https://sdk-attribution.mpire.nxus.mobi/";
+NSString * const ND_SERVER_BASE_URL_POSTBACK        = @"https://mpire.postnx.us/";
 
 NSString * const ND_APP_FIRST_RUN                   = @"app-first-run";
 NSString * const ND_FINGERPRINT                     = @"fingerprint";
@@ -60,12 +59,17 @@ NSString * const ND_TRACK_EVENT_NAME                = @"event_name";
 NSString * const ND_TRACK_EVENT_PARAM               = @"event_param";
 NSString * const ND_TRACK_EVENT_TIME                = @"event_time";
 NSString * const ND_TRACK_EVENT_TIME_EPOCH          = @"event_time_epoch";
+NSString * const ND_TRACK_EVENT_REVENUE_USD         = @"event_revenue_usd";
 NSString * const ND_TRACK_CLICK_ID                  = @"click_id";
 NSString * const ND_TRACK_AFFILIATE_ID              = @"affiliate_id";
 NSString * const ND_TRACK_CAMPAIGN_ID               = @"campaign_id";
 NSString * const ND_TRACK_ATTRIBUTION_DATA          = @"attribution_data";
 
 NSString * const ND_REQ_DSP_TOKEN                   = @"dsp-token";
+
+NSString * const NS_REQ_APP_KEY                     = @"app_key";
+
+NSString * const ND_CUSTOM_USER_IP                  = @"user_ip";
 
 NSString * const ND_CONF_LAST_LAUNCH_INTERNAL       = @"internal.tracking.last.launch";
 
@@ -76,8 +80,9 @@ NSString * const ND_TRACKING_EVENT_KEY_PREFIX       = @"ND_TRACKING_ITEM_";
 
 NSString * const ND_ADVERTISING_IDENTIFIER          = @"nd.advertising.identifier";
 
-NSString * const ND_SDK_VERSION                     = @"1.1.0";
+NSString * const ND_SDK_VERSION                     = @"1.1.1";
 NSString * const ND_SDK_PLATFORM                    = @"ios_native";
+NSString * const ND_SDK_PLATFORM_CUSTOM             = @"sdk_platform_custom";
 
 int const ND_TRACKING_OPERATION_SLEEP = 1800;
 

@@ -22,6 +22,7 @@
 -(NSString *)getTrack;
 -(NSString *)getTrackingItemKey;
 -(NSString *)getParams;
+-(NSMutableDictionary *)getParamsDictionary;
 -(NSString *)getFormattedTime;
 
 @end

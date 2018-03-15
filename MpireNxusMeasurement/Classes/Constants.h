@@ -9,8 +9,7 @@
 
 @interface Constants : NSObject
 
-extern NSString * const ND_SERVER_BASE_URL_EVENT;
-extern NSString * const ND_SERVER_BASE_URL_ATTRIBUTION;
+extern NSString * const ND_SERVER_BASE_URL_POSTBACK;
 
 extern NSString * const ND_APP_FIRST_RUN;
 extern NSString * const ND_FINGERPRINT;
@@ -60,12 +59,17 @@ extern NSString * const ND_TRACK_EVENT_NAME;
 extern NSString * const ND_TRACK_EVENT_PARAM;
 extern NSString * const ND_TRACK_EVENT_TIME;
 extern NSString * const ND_TRACK_EVENT_TIME_EPOCH;
+extern NSString * const ND_TRACK_EVENT_REVENUE_USD;
 extern NSString * const ND_TRACK_CLICK_ID;
 extern NSString * const ND_TRACK_AFFILIATE_ID;
 extern NSString * const ND_TRACK_CAMPAIGN_ID;
 extern NSString * const ND_TRACK_ATTRIBUTION_DATA;
 
 extern NSString * const ND_REQ_DSP_TOKEN;
+
+extern NSString * const NS_REQ_APP_KEY;
+
+extern NSString * const ND_CUSTOM_USER_IP;
 
 extern NSString * const ND_CONF_LAST_LAUNCH_INTERNAL;
 
@@ -77,6 +81,7 @@ extern NSString * const ND_ADVERTISING_IDENTIFIER;
 
 extern NSString * const ND_SDK_VERSION;
 extern NSString * const ND_SDK_PLATFORM;
+extern NSString * const ND_SDK_PLATFORM_CUSTOM;
 
 extern int const ND_TRACKING_OPERATION_SLEEP;
 

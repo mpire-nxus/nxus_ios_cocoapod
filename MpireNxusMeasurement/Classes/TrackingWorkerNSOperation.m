@@ -9,6 +9,7 @@
 #import "NDDeviceInformation.h"
 #import "NDLogger.h"
 #include <CommonCrypto/CommonDigest.h>
+#include "CustomTrackingEvents.h"
 
 @implementation TrackingWorkerNSOperation
 
@@ -22,65 +23,113 @@
         
         [NDLogger debug:@"TRACKING ITEM: %@", postObject];
         
-        NSString *serverStringURL = ND_SERVER_BASE_URL_EVENT;
-        
-        if ([[trackingItem event] isEqualToString:ND_TRACKING_EVENT_FIRST_APP_LAUNCH]) {
-            serverStringURL = ND_SERVER_BASE_URL_ATTRIBUTION;
-            
-            NSURL *serverURL = [NSURL URLWithString:serverStringURL];
-            NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:serverURL
-                                                                   cachePolicy:NSURLRequestReloadIgnoringCacheData timeoutInterval:30.0];
-            NSData *requestData = [postObject dataUsingEncoding:NSUTF8StringEncoding];
-            NSString *dspToken = [NDDataContainer pullStringValue:ND_DSP_API_KEY];
-            
-            [request setHTTPMethod:@"POST"];
-            [request setValue:@"application/json" forHTTPHeaderField:@"Accept"];
-            [request setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
-            [request setValue:dspToken forHTTPHeaderField:ND_REQ_DSP_TOKEN];
-            [request setValue:[NSString stringWithFormat:@"%lu", (unsigned long)[postObject length]] forHTTPHeaderField:@"Content-Length"];
-            [request setHTTPBody:requestData];
-            
-            dispatch_semaphore_t semaphore = dispatch_semaphore_create(0);
-            
-            NSURLSession *session = [NSURLSession sessionWithConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration]];
-            [[session dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
-                if (error) {
-                    [NDLogger debug:@"dataTaskWithRequest error: %@", error];
-                } else {
-                    if ([response isKindOfClass:[NSHTTPURLResponse class]]) {
-                        NSInteger statusCode = [(NSHTTPURLResponse *)response statusCode];
-                        if (statusCode != 200) {
-                            [NDLogger debug:@"dataTaskWithRequest HTTP status code: %ld", (long)statusCode];
-                        } else {
-                            [self sendEventToS3:trackingItem];
-                            NSString *requestReply = [[NSString alloc] initWithData:data encoding:NSASCIIStringEncoding];
-                            [NDLogger debug:@"requestReply: %@", requestReply];
-                            [NDDataContainer clearTrackingEvent:trackingItem];
-                        }
-                    }
-                }
-                dispatch_semaphore_signal(semaphore);
-            }] resume];
-            
-            dispatch_semaphore_wait(semaphore, DISPATCH_TIME_FOREVER);
-        } else {
-            [self sendEventToS3:trackingItem];
-        }
+        [self sendEventToPostback:trackingItem];
     }
 }
 
-- (void) sendEventToS3:(TrackingItem *)item {
-    NSString *serverStringURL = ND_SERVER_BASE_URL_EVENT;
-    serverStringURL = [NSString stringWithFormat:@"%@%@", serverStringURL, [self getS3UrlForTrackingItem: item]];
-    NSURL *serverURL = [NSURL URLWithString:serverStringURL];
-    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:serverURL cachePolicy:NSURLRequestReloadIgnoringCacheData timeoutInterval:30.0];
+- (void) sendEventToPostback:(TrackingItem *)item {
+    if ([[item event] isEqualToString:ND_TRACKING_EVENT_FIRST_APP_LAUNCH]) {
+        item.eventIndex = ND_CTE_INSTALL_INDEX;
+        item.event = ND_CTE_INSTALL_NAME;
+    }
+    
+    NSDictionary *trackingItemDict = [self getJsonDictionaryForTrackingItem:item];
     
     NSString *dspToken = [NDDataContainer pullStringValue:ND_DSP_API_KEY];
     
-    [request setHTTPMethod:@"GET"];
-    [request setValue:@"iosSDK/1.0" forHTTPHeaderField:@"User-Agent"];
-    [request setValue:@"" forHTTPHeaderField:@"Content-Type"];
-    [request setValue:dspToken forHTTPHeaderField:ND_REQ_DSP_TOKEN];
+    NSString *serverStringUrl = ND_SERVER_BASE_URL_POSTBACK;
+    
+    NSString *paramTemplate = @"%@&%@=%@";
+    NSString *paramsUri = [NSString stringWithFormat:@"%@=%@", NS_REQ_APP_KEY, dspToken];
+    paramsUri = [NSString stringWithFormat:paramTemplate, paramsUri, ND_TRACK_EVENT_INDEX, item.eventIndex];
+    paramsUri = [NSString stringWithFormat:paramTemplate, paramsUri, ND_TRACK_EVENT_NAME, item.event];
+    
+    NSString *encodedEventTime = (NSString *) CFBridgingRelease(CFURLCreateStringByAddingPercentEscapes(
+                                                                                                        NULL,
+                                                                                                        (CFStringRef)[item getFormattedTime],
+                                                                                                        NULL,
+                                                                                                        (CFStringRef)@"!*'();:@&=+$,/?%#[]",
+                                                                                                        kCFStringEncodingUTF8 ));
+    paramsUri = [NSString stringWithFormat:paramTemplate, paramsUri, ND_TRACK_EVENT_TIME, encodedEventTime];
+    paramsUri = [NSString stringWithFormat:paramTemplate, paramsUri, ND_TRACK_EVENT_REVENUE_USD, @""]; // TODO set event_revenue_usd
+    
+    NSDictionary *params = [item getParamsDictionary];
+    if (params) {
+        NSError *error;
+        NSData *paramsData = [NSJSONSerialization dataWithJSONObject:params options:0 error:&error];
+        if (!paramsData) {
+            [NDLogger debug:@"Json build from NSMutableDictionary failed: %@", error];
+            paramsUri = [NSString stringWithFormat:paramTemplate, paramsUri, ND_TRACK_EVENT_PARAM, @""];
+        } else {
+            NSString *paramsString = [[NSString alloc] initWithData:paramsData encoding:NSUTF8StringEncoding];
+            NSString *encodedParams = (NSString *) CFBridgingRelease(CFURLCreateStringByAddingPercentEscapes(
+                                                                                                             NULL,
+                                                                                                             (CFStringRef)paramsString,
+                                                                                                             NULL,
+                                                                                                             (CFStringRef)@"!*'();:@&=+$,/?%#[]",
+                                                                                                             kCFStringEncodingUTF8 ));
+            paramsUri = [NSString stringWithFormat:paramTemplate, paramsUri, ND_TRACK_EVENT_PARAM, encodedParams];
+        }
+    } else {
+        paramsUri = [NSString stringWithFormat:paramTemplate, paramsUri, ND_TRACK_EVENT_PARAM, @""];
+    }
+    
+    NSDictionary *attributionData = [trackingItemDict objectForKey:ND_TRACK_ATTRIBUTION_DATA];
+    paramsUri = [NSString stringWithFormat:paramTemplate, paramsUri, ND_TRACK_CLICK_ID, [attributionData objectForKey:ND_TRACK_CLICK_ID]];
+    paramsUri = [NSString stringWithFormat:paramTemplate, paramsUri, ND_TRACK_CAMPAIGN_ID, [attributionData objectForKey:ND_TRACK_CAMPAIGN_ID]];
+    paramsUri = [NSString stringWithFormat:paramTemplate, paramsUri, ND_TRACK_AFFILIATE_ID, [attributionData objectForKey:ND_TRACK_AFFILIATE_ID]];
+    
+    NSString *encodedUserAgent = (NSString *) CFBridgingRelease(CFURLCreateStringByAddingPercentEscapes(
+                                                                                                        NULL,
+                                                                                                        (CFStringRef)[trackingItemDict objectForKey:ND_DI_DEVICE_USER_AGENT],
+                                                                                                        NULL,
+                                                                                                        (CFStringRef)@"!*'();:@&=+$,/?%#[]",
+                                                                                                        kCFStringEncodingUTF8 ));
+    paramsUri = [NSString stringWithFormat:paramTemplate, paramsUri, ND_DI_DEVICE_USER_AGENT, encodedUserAgent];
+    paramsUri = [NSString stringWithFormat:paramTemplate, paramsUri, ND_DI_DEVICE_ABI, [trackingItemDict objectForKey:ND_DI_DEVICE_ABI]];
+    paramsUri = [NSString stringWithFormat:paramTemplate, paramsUri, ND_DI_DEVICE_ACCEPT_LANGUAGE, [trackingItemDict objectForKey:ND_DI_DEVICE_ACCEPT_LANGUAGE]];
+    paramsUri = [NSString stringWithFormat:paramTemplate, paramsUri, ND_DI_DEVICE_COUNTRY, [trackingItemDict objectForKey:ND_DI_DEVICE_COUNTRY]];
+    paramsUri = [NSString stringWithFormat:paramTemplate, paramsUri, ND_DI_DEVICE_FINGERPRINT_ID, [trackingItemDict objectForKey:ND_DI_DEVICE_FINGERPRINT_ID]];
+    paramsUri = [NSString stringWithFormat:paramTemplate, paramsUri, ND_DI_DEVICE_HARDWARE_NAME, [trackingItemDict objectForKey:ND_DI_DEVICE_HARDWARE_NAME]];
+    paramsUri = [NSString stringWithFormat:paramTemplate, paramsUri, ND_DI_DEVICE_LANG, [trackingItemDict objectForKey:ND_DI_DEVICE_LANG]];
+    paramsUri = [NSString stringWithFormat:paramTemplate, paramsUri, ND_DI_DEVICE_MANUFACTURER, [trackingItemDict objectForKey:ND_DI_DEVICE_MANUFACTURER]];
+    
+    NSString *encodedDeviceModel = (NSString *) CFBridgingRelease(CFURLCreateStringByAddingPercentEscapes(
+                                                                                                          NULL,
+                                                                                                          (CFStringRef)[trackingItemDict objectForKey:ND_DI_DEVICE_MODEL],
+                                                                                                          NULL,
+                                                                                                          (CFStringRef)@"!*'();:@&=+$,/?%#[]",
+                                                                                                          kCFStringEncodingUTF8 ));
+    paramsUri = [NSString stringWithFormat:paramTemplate, paramsUri, ND_DI_DEVICE_MODEL, encodedDeviceModel];
+    paramsUri = [NSString stringWithFormat:paramTemplate, paramsUri, ND_DI_DEVICE_OS, [trackingItemDict objectForKey:ND_DI_DEVICE_OS]];
+    paramsUri = [NSString stringWithFormat:paramTemplate, paramsUri, ND_DI_DEVICE_OS_VERSION, [trackingItemDict objectForKey:ND_DI_DEVICE_OS_VERSION]];
+    paramsUri = [NSString stringWithFormat:paramTemplate, paramsUri, ND_DI_DEVICE_SCREEN_DPI, [trackingItemDict objectForKey:ND_DI_DEVICE_SCREEN_DPI]];
+    paramsUri = [NSString stringWithFormat:paramTemplate, paramsUri, ND_DI_DEVICE_SCREEN_HEIGHT, [trackingItemDict objectForKey:ND_DI_DEVICE_SCREEN_HEIGHT]];
+    paramsUri = [NSString stringWithFormat:paramTemplate, paramsUri, ND_DI_DEVICE_SCREEN_WIDTH, [trackingItemDict objectForKey:ND_DI_DEVICE_SCREEN_WIDTH]];
+    paramsUri = [NSString stringWithFormat:paramTemplate, paramsUri, ND_DI_DEVICE_TYPE, [trackingItemDict objectForKey:ND_DI_DEVICE_TYPE]];
+    
+    NSString *encodedInstallTime = (NSString *) CFBridgingRelease(CFURLCreateStringByAddingPercentEscapes(
+                                                                                                          NULL,
+                                                                                                          (CFStringRef)[trackingItemDict objectForKey:ND_DI_APP_INSTALL_TIME],
+                                                                                                          NULL,
+                                                                                                          (CFStringRef)@"!*'();:@&=+$,/?%#[]",
+                                                                                                          kCFStringEncodingUTF8 ));
+    paramsUri = [NSString stringWithFormat:paramTemplate, paramsUri, ND_DI_APP_INSTALL_TIME, encodedInstallTime];
+    paramsUri = [NSString stringWithFormat:paramTemplate, paramsUri, ND_DI_APP_PACKAGE_NAME, [trackingItemDict objectForKey:ND_DI_APP_PACKAGE_NAME]];
+    paramsUri = [NSString stringWithFormat:paramTemplate, paramsUri, ND_DI_APP_PACKAGE_VERSION, [trackingItemDict objectForKey:ND_DI_APP_PACKAGE_VERSION]];
+    paramsUri = [NSString stringWithFormat:paramTemplate, paramsUri, ND_DI_NETWORK_CONNECTION_TYPE, [trackingItemDict objectForKey:ND_DI_NETWORK_CONNECTION_TYPE]];
+    paramsUri = [NSString stringWithFormat:paramTemplate, paramsUri, ND_DI_IDFA, [trackingItemDict objectForKey:ND_DI_IDFA]];
+    paramsUri = [NSString stringWithFormat:paramTemplate, paramsUri, ND_CUSTOM_USER_IP, [trackingItemDict objectForKey:ND_DI_NETWORK_IP]];
+    
+    NSURL *serverURL = [NSURL URLWithString:serverStringUrl];
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:serverURL
+                                                           cachePolicy:NSURLRequestReloadIgnoringCacheData timeoutInterval:30.0];
+    NSData *requestData = [paramsUri dataUsingEncoding:NSUTF8StringEncoding];
+    
+    [request setHTTPMethod:@"POST"];
+    [request setValue:@"application/json" forHTTPHeaderField:@"Accept"];
+    [request setValue:[NSString stringWithFormat:@"%lu", (unsigned long)[paramsUri length]] forHTTPHeaderField:@"Content-Length"];
+    [request setHTTPBody:requestData];
     
     dispatch_semaphore_t semaphore = dispatch_semaphore_create(0);
     
@@ -106,9 +155,9 @@
     dispatch_semaphore_wait(semaphore, DISPATCH_TIME_FOREVER);
 }
 
-- (NSString *) getJsonObjectForTrackingItem: (TrackingItem *)item {
+- (NSDictionary *) getJsonDictionaryForTrackingItem:( TrackingItem *)item {
     NSMutableDictionary* deviceInformations = [[NDDeviceInformation getDeviceInformation] mutableCopy];
-
+    
     [deviceInformations setObject:[item eventIndex] forKey:ND_TRACK_EVENT_INDEX];
     [deviceInformations setObject:[item event] forKey:ND_TRACK_EVENT_NAME];
     [deviceInformations setObject:[item getParams] forKey:ND_TRACK_EVENT_PARAM];
@@ -126,7 +175,30 @@
     [deviceInformations setObject:[self testAndConvertArabDateFormat:[deviceInformations objectForKey:ND_TRACK_EVENT_TIME]] forKey:ND_TRACK_EVENT_TIME];
     [deviceInformations setObject:[self testAndConvertArabDateFormat:[deviceInformations objectForKey:ND_DI_APP_FIRST_LAUNCH]] forKey:ND_DI_APP_FIRST_LAUNCH];
     [deviceInformations setObject:[self testAndConvertArabDateFormat:[deviceInformations objectForKey:ND_DI_APP_INSTALL_TRUST_TIME]] forKey:ND_DI_APP_INSTALL_TRUST_TIME];
+    
+    return deviceInformations;
+}
 
+- (NSString *) getJsonObjectForTrackingItem: (TrackingItem *)item {
+    NSMutableDictionary* deviceInformations = [[NDDeviceInformation getDeviceInformation] mutableCopy];
+    
+    [deviceInformations setObject:[item eventIndex] forKey:ND_TRACK_EVENT_INDEX];
+    [deviceInformations setObject:[item event] forKey:ND_TRACK_EVENT_NAME];
+    [deviceInformations setObject:[item getParams] forKey:ND_TRACK_EVENT_PARAM];
+    [deviceInformations setObject:[item getFormattedTime] forKey:ND_TRACK_EVENT_TIME];
+    
+    NSDictionary *attributionData = @{
+                                      ND_TRACK_CLICK_ID : @"",
+                                      ND_TRACK_AFFILIATE_ID : @"",
+                                      ND_TRACK_CAMPAIGN_ID : @""
+                                      };
+    
+    [deviceInformations setObject:attributionData forKey:ND_TRACK_ATTRIBUTION_DATA];
+    
+    [deviceInformations setObject:[self testAndConvertArabDateFormat:[deviceInformations objectForKey:ND_DI_APP_INSTALL_TIME]] forKey:ND_DI_APP_INSTALL_TIME];
+    [deviceInformations setObject:[self testAndConvertArabDateFormat:[deviceInformations objectForKey:ND_TRACK_EVENT_TIME]] forKey:ND_TRACK_EVENT_TIME];
+    [deviceInformations setObject:[self testAndConvertArabDateFormat:[deviceInformations objectForKey:ND_DI_APP_FIRST_LAUNCH]] forKey:ND_DI_APP_FIRST_LAUNCH];
+    [deviceInformations setObject:[self testAndConvertArabDateFormat:[deviceInformations objectForKey:ND_DI_APP_INSTALL_TRUST_TIME]] forKey:ND_DI_APP_INSTALL_TRUST_TIME];
     
     //build string object
     NSError *error;
@@ -159,45 +231,6 @@
         input = [input stringByReplacingOccurrencesOfString:[formatter stringFromNumber:num] withString:num.stringValue];
     }
     return input;
-}
-
-
-- (NSString *) getS3UrlForTrackingItem: (TrackingItem *)item {
-    NSMutableDictionary* deviceInformations = [[NDDeviceInformation getDeviceInformation] mutableCopy];
-    NSString *s3endpoint = [NSString stringWithFormat:@"apple.%@", [deviceInformations objectForKey:ND_DI_APP_PACKAGE_NAME]];
-    NSString *response = [NSString stringWithFormat:@"%@", [self sha1: s3endpoint]];
-
-    NSString *delimiter = @"?";
-    
-    for (id key in deviceInformations) {
-        NSString *encodedValue = (NSString *) CFBridgingRelease(CFURLCreateStringByAddingPercentEscapes(
-                                                                                                        NULL,
-                                                                                                        (CFStringRef)[deviceInformations objectForKey:key],
-                                                                                                        NULL,
-                                                                                                        (CFStringRef)@"!*'();:@&=+$,/?%#[]",
-                                                                                                        kCFStringEncodingUTF8 ));
-        NSString *item = [NSString stringWithFormat:@"%@%@=%@", delimiter, key, encodedValue];
-        response = [response stringByAppendingString: item];
-        delimiter = @"&";
-    };
-    
-    NSString *eventIndex = [NSString stringWithFormat:@"%@%@=%@", delimiter, ND_TRACK_EVENT_INDEX, [item eventIndex]];
-    response = [response stringByAppendingString: eventIndex];
-    NSString *eventName = [NSString stringWithFormat:@"%@%@=%@", delimiter, ND_TRACK_EVENT_NAME, [item event]];
-    response = [response stringByAppendingString: eventName];
-    NSString *encodedParamsValue = (NSString *) CFBridgingRelease(CFURLCreateStringByAddingPercentEscapes(
-                                                                                                          NULL,
-                                                                                                          (CFStringRef)[item getParams],
-                                                                                                          NULL,
-                                                                                                          (CFStringRef)@"!*'();:@&=+$,/?%#[]",
-                                                                                                          kCFStringEncodingUTF8 ));
-    
-    NSString *eventParam = [NSString stringWithFormat:@"%@%@=%@", delimiter, ND_TRACK_EVENT_PARAM, encodedParamsValue];
-    response = [response stringByAppendingString: eventParam];
-    NSString *eventTime = [NSString stringWithFormat:@"%@%@=%@", delimiter, ND_TRACK_EVENT_TIME, [item getFormattedTime]];
-    response = [response stringByAppendingString: eventTime];
-    
-    return response;
 }
 
 - (NSString *) sha1:(NSString*) input {
