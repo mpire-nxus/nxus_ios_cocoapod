@@ -19,10 +19,6 @@
     for (int i = 0; i < [allTrackingItems count]; i++) {
         TrackingItem *trackingItem = allTrackingItems[i];
         
-        NSString* postObject = [self getJsonObjectForTrackingItem:trackingItem];
-        
-        [NDLogger debug:@"TRACKING ITEM: %@", postObject];
-        
         [self sendEventToPostback:trackingItem];
     }
 }
@@ -32,6 +28,9 @@
         item.eventIndex = ND_CTE_INSTALL_INDEX;
         item.event = ND_CTE_INSTALL_NAME;
     }
+    
+    NSString* postObject = [self getJsonObjectForTrackingItem:item];
+    [NDLogger debug:@"SENDING TRACKING ITEM: %@", postObject];
     
     NSDictionary *trackingItemDict = [self getJsonDictionaryForTrackingItem:item];
     
@@ -119,9 +118,13 @@
     paramsUri = [NSString stringWithFormat:paramTemplate, paramsUri, ND_DI_APP_PACKAGE_VERSION, [trackingItemDict objectForKey:ND_DI_APP_PACKAGE_VERSION]];
     paramsUri = [NSString stringWithFormat:paramTemplate, paramsUri, ND_DI_NETWORK_CONNECTION_TYPE, [trackingItemDict objectForKey:ND_DI_NETWORK_CONNECTION_TYPE]];
     paramsUri = [NSString stringWithFormat:paramTemplate, paramsUri, ND_DI_IDFA, [trackingItemDict objectForKey:ND_DI_IDFA]];
-    paramsUri = [NSString stringWithFormat:paramTemplate, paramsUri, ND_CUSTOM_USER_IP, [trackingItemDict objectForKey:ND_DI_NETWORK_IP]];
+    paramsUri = [NSString stringWithFormat:paramTemplate, paramsUri, ND_CUSTOM_USER_IP, [trackingItemDict objectForKey:ND_CUSTOM_USER_IP]];
     
     NSURL *serverURL = [NSURL URLWithString:serverStringUrl];
+    
+    [NDLogger debug:@"Sending Tracking event to endpoint: %@", serverStringUrl];
+    [NDLogger debug:@"Event POST params: %@", paramsUri];
+    
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:serverURL
                                                            cachePolicy:NSURLRequestReloadIgnoringCacheData timeoutInterval:30.0];
     NSData *requestData = [paramsUri dataUsingEncoding:NSUTF8StringEncoding];

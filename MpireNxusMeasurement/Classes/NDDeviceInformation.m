@@ -157,6 +157,7 @@ static NSDictionary *ndDeviceModelAndPpi = nil;
     
     self.networkConnectionType = [self getNetworkConnectionType];
     self.networkIpAddress = [self getNetworkIpAddress];
+    [self getUserIpAddress];
     
     self.trustInstallTime = [SAMKeychain passwordForService:ND_DI_APP_INSTALL_TRUST_TIME account:self.bundleIdentifier];
     self.trustInstallKey = [SAMKeychain passwordForService:ND_DI_APP_INSTALL_TRUST_KEY account:self.bundleIdentifier];
@@ -431,6 +432,31 @@ static NSDictionary *ndDeviceModelAndPpi = nil;
     return address;
 }
 
+- (void) getUserIpAddress {
+    NSString *url = @"https://api.ipify.org";
+    NSURL *serverUrl = [NSURL URLWithString:url];
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:serverUrl cachePolicy:NSURLRequestReloadIgnoringCacheData timeoutInterval:30.0];
+    [request setHTTPMethod:@"GET"];
+    
+    dispatch_semaphore_t semaphore = dispatch_semaphore_create(0);
+    
+    NSURLSession *session = [NSURLSession sessionWithConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration]];
+    [[session dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+        if (error) {
+            NSLog(@"%@", error);
+            self.userIpAddress = @"";
+        } else {
+            if ([response isKindOfClass:[NSHTTPURLResponse class]]) {
+                NSString *requestReply = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+                self.userIpAddress = requestReply;
+            }
+        }
+        dispatch_semaphore_signal(semaphore);
+    }] resume];
+    
+    dispatch_semaphore_wait(semaphore, DISPATCH_TIME_FOREVER);
+}
+
 - (NSString *) getSdkVersion {
     return ND_SDK_VERSION;
 }
@@ -475,6 +501,7 @@ static NSDictionary *ndDeviceModelAndPpi = nil;
                                    ND_DI_DEVICE_ACCEPT_LANGUAGE : ndDeviceInformationInstance.deviceAcceptLanguage,
                                    ND_DI_NETWORK_CONNECTION_TYPE : ndDeviceInformationInstance.networkConnectionType,
                                    ND_DI_NETWORK_IP : ndDeviceInformationInstance.networkIpAddress,
+                                   ND_CUSTOM_USER_IP : ndDeviceInformationInstance.userIpAddress,
                                    ND_DI_SDK_PLATFORM : ndDeviceInformationInstance.clientSdkPlatform,
                                    ND_DI_SDK_VERSION : ndDeviceInformationInstance.clientSdkVersion,
                                    ND_DI_APP_INSTALL_TRUST_TIME : ndDeviceInformationInstance.trustInstallTime,

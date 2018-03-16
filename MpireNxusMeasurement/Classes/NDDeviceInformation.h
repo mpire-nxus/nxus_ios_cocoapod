@@ -23,6 +23,7 @@
 
 @property (nonatomic, copy) NSString *networkConnectionType;
 @property (nonatomic, copy) NSString *networkIpAddress;
+@property (nonatomic, copy) NSString *userIpAddress;
 
 @property (nonatomic, copy) NSString *applicationUserUuid;
 
@@ -72,6 +73,7 @@
 - (NSString *) getAdvertisingIdentifier;
 - (NSString *) getNetworkConnectionType;
 - (NSString *) getNetworkIpAddress;
+- (void) getUserIpAddress;
 - (NSString *) getSdkVersion;
 - (NSString *) getSdkPlatform;
 + (NSString *) formatDate:(NSDate *)date;
