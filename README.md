@@ -3,7 +3,7 @@
 [![Platform](https://img.shields.io/cocoapods/p/mpire_nxus_measurement.svg?style=flat)](http://cocoapods.org/pods/mpire_nxus_measurement)
 
 ## Summary
-TechMpire nxus platform SDK CocoaPods distribution for iOS developers
+TechMpire Measurement SDK CocoaPods distribution for iOS developers
 
 ## Installation
 
