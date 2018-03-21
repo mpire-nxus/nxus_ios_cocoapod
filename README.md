@@ -18,7 +18,7 @@ pod "mpire_nxus_measurement"
 After you completed the previous step, you are ready to initialise the library and start sending events.
 Open <b>AppDelegate.m</b> class and import the library header file:
 ```
-#import "include/MpireNxusMeasurement/MpireNxusMeasurement.h"
+#import "mpire_nxus_measurement/MpireNxusMeasurement.h"
 ```
 
 Then, initialise it within AppDelegate's <b>didFinishLaunchingWithOptions</b> method:
