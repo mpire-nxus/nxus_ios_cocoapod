@@ -120,6 +120,23 @@
     paramsUri = [NSString stringWithFormat:paramTemplate, paramsUri, ND_DI_IDFA, [trackingItemDict objectForKey:ND_DI_IDFA]];
     paramsUri = [NSString stringWithFormat:paramTemplate, paramsUri, ND_CUSTOM_USER_IP, [trackingItemDict objectForKey:ND_CUSTOM_USER_IP]];
     
+    paramsUri = [NSString stringWithFormat:paramTemplate, paramsUri, ND_DI_DEVICE_API_LEVEL, [trackingItemDict objectForKey:ND_DI_DEVICE_API_LEVEL]];
+    paramsUri = [NSString stringWithFormat:paramTemplate, paramsUri, ND_DI_DEVICE_SCREEN_FORMAT, [trackingItemDict objectForKey:ND_DI_DEVICE_SCREEN_FORMAT]];
+    paramsUri = [NSString stringWithFormat:paramTemplate, paramsUri, ND_DI_DEVICE_SCREEN_SIZE, [trackingItemDict objectForKey:ND_DI_DEVICE_SCREEN_SIZE]];
+    paramsUri = [NSString stringWithFormat:paramTemplate, paramsUri, ND_DI_SDK_PLATFORM, [trackingItemDict objectForKey:ND_DI_SDK_PLATFORM]];
+    paramsUri = [NSString stringWithFormat:paramTemplate, paramsUri, ND_DI_SDK_VERSION, [trackingItemDict objectForKey:ND_DI_SDK_VERSION]];
+    paramsUri = [NSString stringWithFormat:paramTemplate, paramsUri, ND_DI_APP_PACKAGE_VERSION_CODE, [trackingItemDict objectForKey:ND_DI_APP_PACKAGE_VERSION_CODE]];
+    
+    NSString *encodedAppFirstLaunch = (NSString *) CFBridgingRelease(CFURLCreateStringByAddingPercentEscapes(
+                                                                                                             NULL,
+                                                                                                             (CFStringRef)[trackingItemDict objectForKey:ND_DI_APP_FIRST_LAUNCH],
+                                                                                                             NULL,
+                                                                                                             (CFStringRef)@"!*'();:@&=+$,/?%#[]",
+                                                                                                             kCFStringEncodingUTF8 ));
+    paramsUri = [NSString stringWithFormat:paramTemplate, paramsUri, ND_DI_APP_FIRST_LAUNCH, encodedAppFirstLaunch];
+    paramsUri = [NSString stringWithFormat:paramTemplate, paramsUri, ND_DI_APP_INSTALL_TRUST_KEY, [trackingItemDict objectForKey:ND_DI_APP_INSTALL_TRUST_KEY]];
+    paramsUri = [NSString stringWithFormat:paramTemplate, paramsUri, ND_DI_APP_USER_UUID, [trackingItemDict objectForKey:ND_DI_APP_USER_UUID]];
+    
     NSURL *serverURL = [NSURL URLWithString:serverStringUrl];
     
     [NDLogger debug:@"Sending Tracking event to endpoint: %@", serverStringUrl];

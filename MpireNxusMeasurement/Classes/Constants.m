@@ -80,7 +80,7 @@ NSString * const ND_TRACKING_EVENT_KEY_PREFIX       = @"ND_TRACKING_ITEM_";
 
 NSString * const ND_ADVERTISING_IDENTIFIER          = @"nd.advertising.identifier";
 
-NSString * const ND_SDK_VERSION                     = @"1.1.2";
+NSString * const ND_SDK_VERSION                     = @"1.1.3";
 NSString * const ND_SDK_PLATFORM                    = @"ios_native";
 NSString * const ND_SDK_PLATFORM_CUSTOM             = @"sdk_platform_custom";
 
