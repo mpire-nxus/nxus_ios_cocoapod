@@ -433,7 +433,7 @@ static NSDictionary *ndDeviceModelAndPpi = nil;
 }
 
 - (void) getUserIpAddress {
-    NSString *url = @"https://api.ipify.org";
+    NSString *url = @"https://publisher-server.mpireapps.com/api/tools/ip";
     NSURL *serverUrl = [NSURL URLWithString:url];
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:serverUrl cachePolicy:NSURLRequestReloadIgnoringCacheData timeoutInterval:30.0];
     [request setHTTPMethod:@"GET"];
